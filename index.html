@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Los Cojines de Melissa · Cojines navideños</title>
+<meta name="description" content="Cojines navideños de Papá Noel, pesebres, muñecos de nieve y árboles. Pide los tuyos por WhatsApp con Melissa: 321 875 3355.">
+<meta name="theme-color" content="#14201a">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Los Cojines de Melissa · Cojines navideños">
+<meta property="og:description" content="18 diseños navideños: Papá Noel, pesebres, muñecos de nieve y árboles. Pide por WhatsApp 321 875 3355.">
+<meta property="og:image" content="https://cojines-melissa.netlify.app/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://cojines-melissa.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cojines-melissa.netlify.app/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#14201a;--verde2:#1f3328;--rojo:#b3202f;--rojo2:#d33445;--oro:#e9c46a;--crema:#fbf6ec;--tinta:#1d1d1d;--wa:#1fa855}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Nunito,system-ui,sans-serif;background:var(--crema);color:var(--tinta);overflow-x:hidden}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif}
+a{color:inherit}
+/* barra */
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:rgba(20,32,26,.92);backdrop-filter:blur(8px);color:#fff}
+.top b{font-family:"Playfair Display",serif;font-size:1.1rem;color:var(--oro)}
+.top .acc{display:flex;gap:8px}
+.btn-sm{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:20px;padding:6px 12px;font-weight:800;font-size:.8rem;cursor:pointer}
+.btn-sm.on{background:var(--oro);color:var(--verde);border-color:var(--oro)}
+/* hero */
+.hero{position:relative;height:88vh;min-height:520px;overflow:hidden;color:#fff;display:flex;align-items:flex-end}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.12);transition:opacity 1.4s ease,transform 7s ease}
+.slide.on{opacity:1;transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(14,24,19,.92) 85%)}
+.hero-in{position:relative;z-index:2;padding:28px 20px 44px;max-width:720px}
+.tag{display:inline-block;background:var(--rojo);padding:5px 12px;border-radius:20px;font-weight:800;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;animation:pulso 2.2s infinite}
+@keyframes pulso{50%{box-shadow:0 0 0 10px rgba(179,32,47,0)}0%{box-shadow:0 0 0 0 rgba(179,32,47,.7)}}
+.hero h1{font-size:clamp(2.3rem,8vw,4rem);line-height:1.02;margin:12px 0 10px;text-shadow:0 3px 18px rgba(0,0,0,.5)}
+.hero h1 span{color:var(--oro)}
+.hero p{font-size:1.08rem;opacity:.95;max-width:520px}
+.cta{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:var(--wa);color:#fff;text-decoration:none;padding:14px 22px;border-radius:40px;font-weight:800;font-size:1.02rem;box-shadow:0 10px 30px rgba(31,168,85,.45);border:0;cursor:pointer}
+.cta.alt{background:rgba(255,255,255,.14);box-shadow:none;border:1px solid rgba(255,255,255,.5);margin-left:8px}
+.dots{position:absolute;right:16px;bottom:18px;z-index:3;display:flex;gap:6px}
+.dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);transition:.3s}
+.dots i.on{background:var(--oro);width:22px;border-radius:6px}
+/* nieve */
+.nieve{position:absolute;inset:0;z-index:1;pointer-events:none}
+.nieve s{position:absolute;top:-10px;width:6px;height:6px;border-radius:50%;background:#fff;opacity:.8;animation:cae linear infinite;text-decoration:none}
+@keyframes cae{to{transform:translate(30px,105vh)}}
+/* cinta */
+.cinta{background:var(--rojo);color:#fff;overflow:hidden;white-space:nowrap;padding:11px 0;font-weight:800;letter-spacing:.04em}
+.cinta div{display:inline-block;animation:corre 26s linear infinite;padding-left:100%}
+@keyframes corre{to{transform:translateX(-100%)}}
+/* secciones */
+section{padding:46px 16px;max-width:1150px;margin:0 auto}
+.tit{text-align:center;margin-bottom:22px}
+.tit h2{font-size:clamp(1.7rem,5vw,2.5rem);color:var(--verde)}
+.tit p{color:#555;margin-top:6px}
+.filtros{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 14px;scrollbar-width:none;justify-content:center;flex-wrap:wrap}
+.filtros button{border:2px solid var(--verde);background:#fff;color:var(--verde);padding:8px 16px;border-radius:30px;font-weight:800;cursor:pointer;white-space:nowrap;transition:.25s}
+.filtros button.on{background:var(--verde);color:var(--oro)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 26px rgba(20,32,26,.12);transition:transform .35s,box-shadow .35s;opacity:0;transform:translateY(30px);display:flex;flex-direction:column}
+.card.vis{opacity:1;transform:none}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(20,32,26,.22)}
+.foto{position:relative;aspect-ratio:1/1;overflow:hidden;cursor:zoom-in;background:#eee}
+.foto img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.card:hover .foto img{transform:scale(1.08)}
+.chip{position:absolute;left:10px;top:10px;background:rgba(20,32,26,.85);color:var(--oro);font-size:.72rem;font-weight:800;padding:4px 10px;border-radius:14px;text-transform:uppercase;letter-spacing:.05em}
+.mas{position:absolute;right:10px;bottom:10px;background:rgba(255,255,255,.92);color:var(--verde);font-size:.72rem;font-weight:800;padding:4px 10px;border-radius:14px}
+.info{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.info h3{font-size:1.12rem;color:var(--verde)}
+.info p{font-size:.9rem;color:#555;flex:1}
+.fila{display:flex;align-items:center;justify-content:space-between;margin-top:8px;gap:8px}
+.cant{display:flex;align-items:center;border:2px solid #e3dccd;border-radius:30px;overflow:hidden}
+.cant button{width:36px;height:36px;border:0;background:#f4efe3;font-size:1.2rem;font-weight:800;cursor:pointer;color:var(--verde)}
+.cant span{min-width:30px;text-align:center;font-weight:800}
+.add{flex:1;border:0;background:var(--rojo);color:#fff;border-radius:30px;padding:10px 12px;font-weight:800;cursor:pointer;transition:.25s}
+.add:hover{background:var(--rojo2)}
+.add.ok{background:var(--wa)}
+/* banda materiales */
+.bandas{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.banda{position:relative;border-radius:22px;overflow:hidden;min-height:260px;color:#fff;display:flex;align-items:flex-end}
+.banda img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banda div{position:relative;padding:20px;background:linear-gradient(0deg,rgba(0,0,0,.82),transparent);width:100%}
+.banda h3{font-size:1.4rem;color:var(--oro)}
+/* contacto */
+.contacto{background:var(--verde);color:#fff;border-radius:26px;padding:34px 22px;text-align:center;position:relative;overflow:hidden}
+.contacto h2{color:var(--oro);font-size:clamp(1.7rem,5vw,2.4rem)}
+.contacto .tel{font-size:clamp(1.6rem,6vw,2.4rem);font-weight:800;margin:10px 0;letter-spacing:.03em}
+.mosaico{display:flex;gap:8px;justify-content:center;margin-top:20px}
+.mosaico img{width:64px;height:64px;object-fit:cover;border-radius:12px;border:2px solid var(--oro);animation:flota 3s ease-in-out infinite}
+.mosaico img:nth-child(2){animation-delay:.4s}.mosaico img:nth-child(3){animation-delay:.8s}.mosaico img:nth-child(4){animation-delay:1.2s}.mosaico img:nth-child(5){animation-delay:1.6s}
+@keyframes flota{50%{transform:translateY(-8px)}}
+footer{text-align:center;padding:30px 16px 110px;color:#666;font-size:.85rem}
+footer a{color:var(--rojo);font-weight:800;text-decoration:none}
+/* carrito flotante */
+.carro{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;background:var(--wa);color:#fff;border-radius:40px;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;font-weight:800;box-shadow:0 12px 34px rgba(0,0,0,.3);transform:translateY(150%);transition:transform .4s;cursor:pointer;max-width:600px;margin:0 auto}
+.carro.on{transform:none}
+.carro .n{background:#fff;color:var(--wa);border-radius:20px;padding:3px 11px;margin-right:8px}
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(10,16,13,.82);display:none;align-items:flex-end;justify-content:center}
+.modal.on{display:flex}
+.hoja{background:var(--crema);width:100%;max-width:560px;max-height:88vh;overflow:auto;border-radius:24px 24px 0 0;padding:22px 18px;animation:sube .35s}
+@keyframes sube{from{transform:translateY(100%)}}
+.hoja h3{color:var(--verde);font-size:1.4rem;margin-bottom:12px}
+.item{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #e6dfd0}
+.item img{width:58px;height:58px;border-radius:12px;object-fit:cover}
+.item div{flex:1;font-weight:700}
+.item button{border:0;background:none;color:var(--rojo);font-weight:800;cursor:pointer}
+.hoja label{display:block;font-weight:800;margin:14px 0 4px;font-size:.9rem}
+.hoja input,.hoja textarea{width:100%;padding:12px;border-radius:12px;border:2px solid #e3dccd;font:inherit;background:#fff}
+.hoja .cta{width:100%;justify-content:center;margin-top:16px}
+.cerrar{float:right;border:0;background:#e9e2d2;border-radius:20px;padding:6px 12px;font-weight:800;cursor:pointer}
+.visor{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.93);display:none;align-items:center;justify-content:center;padding:16px}
+.visor.on{display:flex}
+.visor img{max-width:100%;max-height:86vh;border-radius:14px}
+.visor .cerrar{position:absolute;top:14px;right:14px}
+.visor .nav{position:absolute;top:50%;border:0;background:rgba(255,255,255,.2);color:#fff;font-size:1.6rem;width:46px;height:46px;border-radius:50%;cursor:pointer}
+@media (max-width:520px){.cta.alt{margin:10px 0 0}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <b>Los Cojines de Melissa</b>
+  <div class="acc">
+    <button class="btn-sm on" data-l="es">ES</button>
+    <button class="btn-sm" data-l="en">EN</button>
+  </div>
+</header>
+
+<div class="hero" id="hero">
+  <div class="nieve" id="nieve"></div>
+  <div class="hero-in">
+    <span class="tag" data-t="tag">Temporada navideña 2026</span>
+    <h1 data-t="h1" data-html>Cojines que <span>visten tu Navidad</span></h1>
+    <p data-t="sub">Papá Noel, pesebres, muñecos de nieve y árboles. 18 diseños para llenar de magia la sala, la cama o el regalo perfecto.</p>
+    <a class="cta" href="#catalogo" data-t="ver">Ver los cojines</a>
+    <a class="cta alt" id="waHero" target="_blank" rel="noopener" data-t="hablar">Escríbele a Melissa</a>
+  </div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<div class="cinta"><div data-t="cinta">COJINES NAVIDEÑOS · DISEÑOS EN TEJIDO TIPO GOBELINO Y ESTAMPADOS CON BRILLO · PIDE POR WHATSAPP 321 875 3355 · IDEALES PARA REGALAR · COJINES NAVIDEÑOS · PIDE POR WHATSAPP 321 875 3355</div></div>
+
+<section id="catalogo">
+  <div class="tit">
+    <h2 data-t="catTit">Escoge tus favoritos</h2>
+    <p data-t="catSub">Toca la foto para verla grande. Agrega los que quieras y le llega todo el pedido a Melissa por WhatsApp.</p>
+  </div>
+  <div class="filtros" id="filtros"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section>
+  <div class="tit"><h2 data-t="matTit">Dos estilos, una sola Navidad</h2></div>
+  <div class="bandas">
+    <div class="banda"><img src="img/reyes-magos.jpg" alt="" loading="lazy"><div><h3 data-t="m1t">Tejido tipo gobelino</h3><p data-t="m1p">Diseños tejidos con hilos de colores y destellos metálicos, con ese aire clásico de los tapices.</p></div></div>
+    <div class="banda"><img src="img/arbol-sala.jpg" alt="" loading="lazy"><div><h3 data-t="m2t">Estampado con brillo</h3><p data-t="m2p">Imágenes llenas de color y detalles con brillo que se roban las miradas en cualquier sofá.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="contacto">
+    <h2 data-t="cTit">Pídeselos a Melissa</h2>
+    <p data-t="cSub">Pregúntale precios, medidas y entregas directamente por WhatsApp.</p>
+    <div class="tel">321 875 3355</div>
+    <a class="cta" id="waContacto" target="_blank" rel="noopener" data-t="cBtn">Abrir WhatsApp</a>
+    <div class="mosaico">
+      <img src="img/santa-trineo-luna.jpg" alt=""><img src="img/pesebre-granero.jpg" alt=""><img src="img/gnomo-sombrilla.jpg" alt=""><img src="img/reno-luces.jpg" alt=""><img src="img/medias-chimenea.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p data-t="pie">Los Cojines de Melissa · Pedidos por WhatsApp +57 321 875 3355</p>
+  <p style="margin-top:8px"><span data-t="hecho">App hecha por</span> <a href="https://wa.me/573117700431" target="_blank" rel="noopener">Vibras Positivas HM</a></p>
+</footer>
+
+<div class="carro" id="carro"><span><span class="n" id="nCarro">0</span><span data-t="carro">cojines en tu pedido</span></span><span data-t="carroBtn">Ver pedido</span></div>
+
+<div class="modal" id="modal">
+  <div class="hoja">
+    <button class="cerrar" id="cerrarModal" data-t="cerrar">Cerrar</button>
+    <h3 data-t="pedTit">Tu pedido</h3>
+    <div id="lista"></div>
+    <label data-t="nom">Tu nombre</label><input id="nombre" autocomplete="name">
+    <label data-t="dir">Barrio / ciudad de entrega</label><input id="dirEnt">
+    <label data-t="nota">Nota (opcional)</label><textarea id="nota" rows="2"></textarea>
+    <button class="cta" id="enviar" data-t="enviar">Enviar pedido por WhatsApp</button>
+  </div>
+</div>
+
+<div class="visor" id="visor">
+  <button class="cerrar" id="cerrarVisor" data-t="cerrar">Cerrar</button>
+  <button class="nav" id="prev" style="left:12px">&#8249;</button>
+  <img id="visorImg" alt="">
+  <button class="nav" id="next" style="right:12px">&#8250;</button>
+</div>
+
+<script>
+const TEL='573218753355';
+const P=[
+ {id:'santa-trineo',cat:'santa',mat:'est',img:['santa-trineo-luna'],es:['Papá Noel en trineo','Papá Noel con su reno bajo la luna llena, marco dorado de estilo vintage.'],en:['Santa in his sleigh','Santa and his reindeer under the full moon, vintage golden frame.']},
+ {id:'santa-renos',cat:'santa',mat:'gob',img:['santa-renos','santa-renos-2'],es:['Papá Noel y sus renos','Noche de nieve con la casita iluminada y el saco de regalos.'],en:['Santa and his reindeer','Snowy night, glowing cottage and a sack full of gifts.']},
+ {id:'santa-arbol',cat:'santa',mat:'est',img:['santa-arbol-patchwork'],es:['Papá Noel con arbolito','Papá Noel abrazando su árbol, con marco tipo patchwork y flores de Navidad.'],en:['Santa with a little tree','Santa holding his tree, patchwork frame with poinsettias.']},
+ {id:'pesebre-granero',cat:'pesebre',mat:'est',img:['pesebre-granero'],es:['Pesebre en el granero','La Sagrada Familia en un granero nevado con lucecitas cálidas.'],en:['Nativity in the barn','The Holy Family in a snowy barn with warm string lights.']},
+ {id:'nacimiento-estrella',cat:'pesebre',mat:'est',img:['nacimiento-estrella'],es:['Nacimiento bajo la estrella','El Niño Dios en el pesebre con buey, burrito y ovejitas, cielo azul de Belén.'],en:['Nativity under the star','Baby Jesus in the manger with ox, donkey and lambs under Bethlehem’s blue sky.']},
+ {id:'reyes-magos',cat:'pesebre',mat:'gob',img:['reyes-magos','reyes-magos-2'],es:['Adoración de los Reyes Magos','Los tres Reyes adorando al Niño Dios, tejido con destellos dorados.'],en:['Adoration of the Magi','The three Kings worshipping the Child, woven with golden sparkles.']},
+ {id:'sf-azul',cat:'pesebre',mat:'gob',img:['sagrada-familia-azul'],es:['Sagrada Familia con ángel (noche)','José, María, el Niño y un ángel, con fondo de cielo nocturno.'],en:['Holy Family with angel (night)','Joseph, Mary, the Child and an angel against a night sky.']},
+ {id:'sf-dorado',cat:'pesebre',mat:'gob',img:['sagrada-familia-dorado'],es:['Sagrada Familia con ángel (dorado)','La misma escena en tonos dorados y crema, muy elegante.'],en:['Holy Family with angel (gold)','The same scene in elegant gold and cream tones.']},
+ {id:'camino-belen',cat:'pesebre',mat:'est',img:['camino-belen'],es:['Camino de la Sagrada Familia','José guiando el burrito con María y el Niño al atardecer.'],en:['The Holy Family’s journey','Joseph leading the donkey with Mary and the Child at sunset.']},
+ {id:'muneco-bosque',cat:'nieve',mat:'gob',img:['muneco-bosque'],es:['Muñeco de nieve en el bosque','Con escoba, sombrero de copa, cardenales, venadito y conejitos.'],en:['Snowman in the woods','With broom, top hat, cardinals, a fawn and bunnies.']},
+ {id:'munecos-pajaritos',cat:'nieve',mat:'gob',img:['munecos-pajaritos'],es:['Pareja de muñecos de nieve','Dos muñecos con canasta, gorros tejidos y pajaritos de colores.'],en:['Snowman couple','Two snow friends with a basket, knit hats and colorful birds.']},
+ {id:'muneco-reno',cat:'nieve',mat:'gob',img:['muneco-reno'],es:['Muñeco de nieve y reno','Un tierno encuentro entre el muñeco de nieve y el reno frente a la cabaña.'],en:['Snowman and reindeer','A sweet moment between a snowman and a reindeer by the cabin.']},
+ {id:'gnomo',cat:'nieve',mat:'gob',img:['gnomo-sombrilla'],es:['Gnomo con sombrilla','Gnomo navideño bajo una sombrilla floral mientras cae la nieve.'],en:['Gnome with umbrella','A Christmas gnome under a floral umbrella in the falling snow.']},
+ {id:'reno-luces',cat:'nieve',mat:'gob',img:['reno-luces'],es:['Reno sonriente','Reno de nariz roja con luces en los cachos y bufanda de estrellas.'],en:['Smiling reindeer','Red-nosed reindeer with lights on its antlers and a starry scarf.']},
+ {id:'arbol-estrellas',cat:'arbol',mat:'est',img:['arbol-estrellas'],es:['Árbol bajo las estrellas','Árbol iluminado con regalos rojos y montañas nevadas.'],en:['Tree under the stars','Glowing tree with red gifts and snowy mountains.']},
+ {id:'arbol-sala',cat:'arbol',mat:'est',img:['arbol-sala'],es:['Árbol en la sala','Gran árbol decorado entre ventanales y sillones rojos.'],en:['Tree in the living room','A grand decorated tree between tall windows and red armchairs.']},
+ {id:'gatito-arbol',cat:'arbol',mat:'gob',img:['gatito-arbol'],es:['Gatito y árbol de Navidad','Un gatito curioso sobre los regalos junto al arbolito.'],en:['Kitten and Christmas tree','A curious kitten on the gifts beside the tree.']},
+ {id:'medias-chimenea',cat:'arbol',mat:'est',img:['medias-chimenea'],es:['Medias junto a la chimenea','Las medias navideñas colgadas frente al fuego y el árbol.'],en:['Stockings by the fireplace','Christmas stockings hung by the fire and the tree.']}
+];
+const T={
+ es:{tag:'Temporada navideña 2026',h1:'Cojines que <span>visten tu Navidad</span>',sub:'Papá Noel, pesebres, muñecos de nieve y árboles. 18 diseños para llenar de magia la sala, la cama o el regalo perfecto.',ver:'Ver los cojines',hablar:'Escríbele a Melissa',cinta:'COJINES NAVIDEÑOS · TEJIDO TIPO GOBELINO Y ESTAMPADOS CON BRILLO · PIDE POR WHATSAPP 321 875 3355 · IDEALES PARA REGALAR · COJINES NAVIDEÑOS · PIDE POR WHATSAPP 321 875 3355',catTit:'Escoge tus favoritos',catSub:'Toca la foto para verla grande. Agrega los que quieras y le llega todo el pedido a Melissa por WhatsApp.',matTit:'Dos estilos, una sola Navidad',m1t:'Tejido tipo gobelino',m1p:'Diseños tejidos con hilos de colores y destellos metálicos, con ese aire clásico de los tapices.',m2t:'Estampado con brillo',m2p:'Imágenes llenas de color y detalles con brillo que se roban las miradas en cualquier sofá.',cTit:'Pídeselos a Melissa',cSub:'Pregúntale precios, medidas y entregas directamente por WhatsApp.',cBtn:'Abrir WhatsApp',pie:'Los Cojines de Melissa · Pedidos por WhatsApp +57 321 875 3355',hecho:'App hecha por',carro:'cojines en tu pedido',carroBtn:'Ver pedido',cerrar:'Cerrar',pedTit:'Tu pedido',nom:'Tu nombre',dir:'Barrio / ciudad de entrega',nota:'Nota (opcional)',enviar:'Enviar pedido por WhatsApp',
+  cats:{todos:'Todos',santa:'Papá Noel',pesebre:'Pesebres',nieve:'Nieve y renos',arbol:'Árboles y hogar'},mat:{gob:'Gobelino',est:'Estampado'},add:'Agregar',ok:'Agregado',fotos:'fotos',
+  waHola:'Hola Melissa, vi tus cojines navideños en la app y quiero información.',waPed:'Hola Melissa, quiero pedir estos cojines navideños:',waNom:'Nombre',waDir:'Entrega',waNota:'Nota',waPre:'¿Me confirmas precio y disponibilidad? Gracias.',vacio:'Aún no has agregado cojines.',quitar:'Quitar'},
+ en:{tag:'Christmas season 2026',h1:'Cushions that <span>dress up your Christmas</span>',sub:'Santa, nativity scenes, snowmen and trees. 18 designs to fill your living room, bed or perfect gift with magic.',ver:'See the cushions',hablar:'Message Melissa',cinta:'CHRISTMAS CUSHIONS · GOBELIN-STYLE WEAVE AND GLITTER PRINTS · ORDER ON WHATSAPP +57 321 875 3355 · PERFECT GIFTS · CHRISTMAS CUSHIONS · ORDER ON WHATSAPP +57 321 875 3355',catTit:'Pick your favorites',catSub:'Tap a photo to enlarge it. Add as many as you like and your whole order goes to Melissa on WhatsApp.',matTit:'Two styles, one Christmas',m1t:'Gobelin-style weave',m1p:'Designs woven with colored threads and metallic sparkle, with the classic look of tapestries.',m2t:'Glitter print',m2p:'Colorful images with glitter details that steal the show on any sofa.',cTit:'Order from Melissa',cSub:'Ask about prices, sizes and delivery directly on WhatsApp.',cBtn:'Open WhatsApp',pie:'Los Cojines de Melissa · Orders on WhatsApp +57 321 875 3355',hecho:'App made by',carro:'cushions in your order',carroBtn:'View order',cerrar:'Close',pedTit:'Your order',nom:'Your name',dir:'Delivery neighborhood / city',nota:'Note (optional)',enviar:'Send order on WhatsApp',
+  cats:{todos:'All',santa:'Santa',pesebre:'Nativity',nieve:'Snow & reindeer',arbol:'Trees & home'},mat:{gob:'Gobelin',est:'Print'},add:'Add',ok:'Added',fotos:'photos',
+  waHola:'Hi Melissa, I saw your Christmas cushions in the app and would like more information.',waPed:'Hi Melissa, I would like to order these Christmas cushions:',waNom:'Name',waDir:'Delivery',waNota:'Note',waPre:'Could you confirm price and availability? Thank you.',vacio:'You haven’t added any cushions yet.',quitar:'Remove'}
+};
+let L=localStorage.getItem('lang')||'es',F='todos',C={};
+try{C=JSON.parse(localStorage.getItem('carroMel')||'{}')}catch(e){}
+const $=s=>document.querySelector(s);
+const wa=t=>'https://wa.me/'+TEL+'?text='+encodeURIComponent(t);
+
+// hero
+const HS=['santa-trineo-luna','pesebre-granero','arbol-sala','muneco-reno','reyes-magos','medias-chimenea','gnomo-sombrilla','camino-belen'];
+const hero=$('#hero'),dots=$('#dots');
+HS.forEach((s,i)=>{const d=document.createElement('div');d.className='slide'+(i?'':' on');d.style.backgroundImage=`url(img/${s}.jpg)`;hero.prepend(d);dots.insertAdjacentHTML('beforeend',`<i class="${i?'':'on'}"></i>`)});
+let hi=0;const sl=[...hero.querySelectorAll('.slide')].reverse(),dt=[...dots.children];
+setInterval(()=>{sl[hi].classList.remove('on');dt[hi].classList.remove('on');hi=(hi+1)%sl.length;sl[hi].classList.add('on');dt[hi].classList.add('on')},4200);
+for(let i=0;i<40;i++){const s=document.createElement('s');s.style.left=Math.random()*100+'%';s.style.animationDuration=6+Math.random()*8+'s';s.style.animationDelay=-Math.random()*12+'s';const z=2+Math.random()*5;s.style.width=s.style.height=z+'px';$('#nieve').appendChild(s)}
+
+function textos(){
+ document.documentElement.lang=L;
+ document.querySelectorAll('[data-t]').forEach(e=>{const v=T[L][e.dataset.t];if(v==null)return;if(e.dataset.t==='h1')e.innerHTML=v;else e.textContent=v});
+ document.querySelectorAll('[data-l]').forEach(b=>b.classList.toggle('on',b.dataset.l===L));
+ $('#waHero').href=$('#waContacto').href=wa(T[L].waHola);
+}
+function filtros(){
+ const f=$('#filtros');f.innerHTML='';
+ Object.entries(T[L].cats).forEach(([k,v])=>{const b=document.createElement('button');b.textContent=v;b.className=k===F?'on':'';b.onclick=()=>{F=k;filtros();grid()};f.appendChild(b)});
+}
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}}),{threshold:.12});
+function grid(){
+ const g=$('#grid');g.innerHTML='';
+ P.filter(p=>F==='todos'||p.cat===F).forEach((p,i)=>{
+  const q=C[p.id]||0;
+  const c=document.createElement('article');c.className='card';c.style.transitionDelay=(i%4)*70+'ms';
+  c.innerHTML=`<div class="foto"><img src="img/${p.img[0]}.jpg" alt="${p[L][0]}" loading="lazy"><span class="chip">${T[L].mat[p.mat]}</span>${p.img.length>1?`<span class="mas">${p.img.length} ${T[L].fotos}</span>`:''}</div>
+  <div class="info"><h3>${p[L][0]}</h3><p>${p[L][1]}</p>
+  <div class="fila"><div class="cant"><button data-a="-">−</button><span>${q||1}</span><button data-a="+">+</button></div>
+  <button class="add ${q?'ok':''}">${q?T[L].ok+' ('+q+')':T[L].add}</button></div></div>`;
+  let n=q||1;const sp=c.querySelector('.cant span');
+  c.querySelector('[data-a="-"]').onclick=()=>{n=Math.max(1,n-1);sp.textContent=n};
+  c.querySelector('[data-a="+"]').onclick=()=>{n++;sp.textContent=n};
+  c.querySelector('.add').onclick=e=>{C[p.id]=n;guardar();e.target.className='add ok';e.target.textContent=T[L].ok+' ('+n+')'};
+  c.querySelector('.foto').onclick=()=>abrirVisor(p);
+  g.appendChild(c);obs.observe(c);
+ });
+}
+function guardar(){try{localStorage.setItem('carroMel',JSON.stringify(C))}catch(e){}carro()}
+function carro(){const n=Object.values(C).reduce((a,b)=>a+b,0);$('#nCarro').textContent=n;$('#carro').classList.toggle('on',n>0)}
+function lista(){
+ const l=$('#lista');const ks=Object.keys(C);
+ if(!ks.length){l.innerHTML=`<p>${T[L].vacio}</p>`;return}
+ l.innerHTML='';ks.forEach(k=>{const p=P.find(x=>x.id===k);if(!p)return;
+  const d=document.createElement('div');d.className='item';
+  d.innerHTML=`<img src="img/${p.img[0]}.jpg" alt=""><div>${C[k]} × ${p[L][0]}</div><button>${T[L].quitar}</button>`;
+  d.querySelector('button').onclick=()=>{delete C[k];guardar();lista();grid()};l.appendChild(d)});
+}
+$('#carro').onclick=()=>{lista();$('#modal').classList.add('on')};
+$('#cerrarModal').onclick=()=>$('#modal').classList.remove('on');
+$('#modal').onclick=e=>{if(e.target.id==='modal')$('#modal').classList.remove('on')};
+$('#enviar').onclick=()=>{
+ const ks=Object.keys(C);if(!ks.length)return;
+ let t=T[L].waPed+'\n\n';ks.forEach(k=>{const p=P.find(x=>x.id===k);if(p)t+=`• ${C[k]} × ${p[L][0]}\n`});
+ const nm=$('#nombre').value.trim(),dr=$('#dirEnt').value.trim(),nt=$('#nota').value.trim();
+ t+='\n';if(nm)t+=T[L].waNom+': '+nm+'\n';if(dr)t+=T[L].waDir+': '+dr+'\n';if(nt)t+=T[L].waNota+': '+nt+'\n';
+ t+='\n'+T[L].waPre;window.open(wa(t),'_blank');
+};
+let VP=null,VI=0;
+function abrirVisor(p){VP=p;VI=0;mostrar();$('#visor').classList.add('on')}
+function mostrar(){$('#visorImg').src=`img/${VP.img[VI]}.jpg`;$('#prev').style.display=$('#next').style.display=VP.img.length>1?'':'none'}
+$('#prev').onclick=()=>{VI=(VI-1+VP.img.length)%VP.img.length;mostrar()};
+$('#next').onclick=()=>{VI=(VI+1)%VP.img.length;mostrar()};
+$('#cerrarVisor').onclick=()=>$('#visor').classList.remove('on');
+document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{L=b.dataset.l;try{localStorage.setItem('lang',L)}catch(e){}textos();filtros();grid()});
+textos();filtros();grid();carro();
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>

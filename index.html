@@ -29,6 +29,7 @@ h1,h2,h3{font-family:"Playfair Display",Georgia,serif}
 a{color:inherit}
 /* barra */
 .top{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:rgba(20,32,26,.92);backdrop-filter:blur(8px);color:#fff}
+.btn-sm.mus{background:var(--rojo);border-color:var(--rojo)}
 .top b{font-family:"Playfair Display",serif;font-size:1.1rem;color:var(--oro)}
 .top .acc{display:flex;gap:8px}
 .btn-sm{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:20px;padding:6px 12px;font-weight:800;font-size:.8rem;cursor:pointer}
@@ -143,10 +144,12 @@ footer a{color:var(--rojo);font-weight:800;text-decoration:none}
 <header class="top">
   <b>Los Cojines de Melissa</b>
   <div class="acc">
+    <button class="btn-sm" id="musBtn" data-t="musOn">Música</button>
     <button class="btn-sm on" data-l="es">ES</button>
     <button class="btn-sm" data-l="en">EN</button>
   </div>
 </header>
+<audio id="musica" src="img/musica-navidad.mp3" loop preload="none"></audio>
 
 <div class="hero" id="hero">
   <div class="nieve" id="nieve"></div>
@@ -246,10 +249,10 @@ const P=[
  {id:'medias-chimenea',cat:'arbol',mat:'est',img:['medias-chimenea'],es:['Medias junto a la chimenea','Las medias navideñas colgadas frente al fuego y el árbol.'],en:['Stockings by the fireplace','Christmas stockings hung by the fire and the tree.']}
 ];
 const T={
- es:{tag:'Temporada navideña 2026',h1:'Cojines que <span>visten tu Navidad</span>',sub:'Papá Noel, pesebres, muñecos de nieve y árboles. 19 diseños para llenar de magia la sala, la cama o el regalo perfecto.',ver:'Ver los cojines',hablar:'Escríbele a Melissa',cinta:'COJINES NAVIDEÑOS HECHOS A MANO · TELA MICROFIBRA Y TELA AMERICANA · DETALLES CON POLVOS AMERICANOS · PIDE POR WHATSAPP 321 875 3355 · IDEALES PARA REGALAR · COJINES NAVIDEÑOS HECHOS A MANO · PIDE POR WHATSAPP 321 875 3355',catTit:'Escoge tus favoritos',catSub:'Toca la foto para verla grande. Agrega los que quieras y le llega todo el pedido a Melissa por WhatsApp.',vtag:'Mira los detalles de cerca',hTag:'Hechos a mano',hTit:'Cosidos por Melissa en la máquina de la abuela',hP:'Cada cojín lo hace Melissa con sus propias manos, en la máquina de coser que heredó de su abuela. Por eso cada uno lleva cariño de familia.',d1t:'Tela microfibra y tela americana',d1p:'Suaves al tacto y lindas a la vista, para la sala, la cama o el regalo.',d2t:'Detalles con polvos americanos',d2p:'Algunos diseños llevan un brillo especial que resalta con las luces de Navidad.',chip:'Hecho a mano',cTit:'Pídeselos a Melissa',cSub:'Pregúntale precios, medidas y entregas directamente por WhatsApp.',cBtn:'Abrir WhatsApp',pie:'Los Cojines de Melissa · Pedidos por WhatsApp +57 321 875 3355',hecho:'App hecha por',carro:'cojines en tu pedido',carroBtn:'Ver pedido',cerrar:'Cerrar',pedTit:'Tu pedido',nom:'Tu nombre',dir:'Barrio / ciudad de entrega',nota:'Nota (opcional)',enviar:'Enviar pedido por WhatsApp',
+ es:{tag:'Temporada navideña 2026',h1:'Cojines que <span>visten tu Navidad</span>',sub:'Papá Noel, pesebres, muñecos de nieve y árboles. 19 diseños para llenar de magia la sala, la cama o el regalo perfecto.',ver:'Ver los cojines',hablar:'Escríbele a Melissa',cinta:'COJINES NAVIDEÑOS HECHOS A MANO · TELA MICROFIBRA Y TELA AMERICANA · DETALLES CON POLVOS AMERICANOS · PIDE POR WHATSAPP 321 875 3355 · IDEALES PARA REGALAR · COJINES NAVIDEÑOS HECHOS A MANO · PIDE POR WHATSAPP 321 875 3355',catTit:'Escoge tus favoritos',catSub:'Toca la foto para verla grande. Agrega los que quieras y le llega todo el pedido a Melissa por WhatsApp.',vtag:'Mira los detalles de cerca',hTag:'Hechos a mano',hTit:'Cosidos por Melissa en la máquina de la abuela',hP:'Cada cojín lo hace Melissa con sus propias manos, en la máquina de coser que heredó de su abuela. Por eso cada uno lleva cariño de familia.',d1t:'Tela microfibra y tela americana',d1p:'Suaves al tacto y lindas a la vista, para la sala, la cama o el regalo.',d2t:'Detalles con polvos americanos',d2p:'Algunos diseños llevan un brillo especial que resalta con las luces de Navidad.',chip:'Hecho a mano',musOn:'Música',musOff:'Sin música',cTit:'Pídeselos a Melissa',cSub:'Pregúntale precios, medidas y entregas directamente por WhatsApp.',cBtn:'Abrir WhatsApp',pie:'Los Cojines de Melissa · Pedidos por WhatsApp +57 321 875 3355',hecho:'App hecha por',carro:'cojines en tu pedido',carroBtn:'Ver pedido',cerrar:'Cerrar',pedTit:'Tu pedido',nom:'Tu nombre',dir:'Barrio / ciudad de entrega',nota:'Nota (opcional)',enviar:'Enviar pedido por WhatsApp',
   cats:{todos:'Todos',santa:'Papá Noel',pesebre:'Pesebres',nieve:'Nieve y renos',arbol:'Árboles, hogar y pueblo'},add:'Agregar',ok:'Agregado',fotos:'fotos',
   waHola:'Hola Melissa, vi tus cojines navideños en la app y quiero información.',waPed:'Hola Melissa, quiero pedir estos cojines navideños:',waNom:'Nombre',waDir:'Entrega',waNota:'Nota',waPre:'¿Me confirmas precio y disponibilidad? Gracias.',vacio:'Aún no has agregado cojines.',quitar:'Quitar'},
- en:{tag:'Christmas season 2026',h1:'Cushions that <span>dress up your Christmas</span>',sub:'Santa, nativity scenes, snowmen and trees. 19 designs to fill your living room, bed or perfect gift with magic.',ver:'See the cushions',hablar:'Message Melissa',cinta:'HANDMADE CHRISTMAS CUSHIONS · MICROFIBER AND AMERICAN FABRIC · GLITTER POWDER DETAILS · ORDER ON WHATSAPP +57 321 875 3355 · PERFECT GIFTS · HANDMADE CHRISTMAS CUSHIONS · ORDER ON WHATSAPP +57 321 875 3355',catTit:'Pick your favorites',catSub:'Tap a photo to enlarge it. Add as many as you like and your whole order goes to Melissa on WhatsApp.',vtag:'See the details up close',hTag:'Handmade',hTit:'Sewn by Melissa on her grandmother’s machine',hP:'Melissa makes every cushion with her own hands, on the sewing machine she inherited from her grandmother. Each one carries a bit of family love.',d1t:'Microfiber and American fabric',d1p:'Soft to the touch and lovely to look at, for the living room, the bed or a gift.',d2t:'Glitter powder details',d2p:'Some designs carry a special sparkle that shines under the Christmas lights.',chip:'Handmade',cTit:'Order from Melissa',cSub:'Ask about prices, sizes and delivery directly on WhatsApp.',cBtn:'Open WhatsApp',pie:'Los Cojines de Melissa · Orders on WhatsApp +57 321 875 3355',hecho:'App made by',carro:'cushions in your order',carroBtn:'View order',cerrar:'Close',pedTit:'Your order',nom:'Your name',dir:'Delivery neighborhood / city',nota:'Note (optional)',enviar:'Send order on WhatsApp',
+ en:{tag:'Christmas season 2026',h1:'Cushions that <span>dress up your Christmas</span>',sub:'Santa, nativity scenes, snowmen and trees. 19 designs to fill your living room, bed or perfect gift with magic.',ver:'See the cushions',hablar:'Message Melissa',cinta:'HANDMADE CHRISTMAS CUSHIONS · MICROFIBER AND AMERICAN FABRIC · GLITTER POWDER DETAILS · ORDER ON WHATSAPP +57 321 875 3355 · PERFECT GIFTS · HANDMADE CHRISTMAS CUSHIONS · ORDER ON WHATSAPP +57 321 875 3355',catTit:'Pick your favorites',catSub:'Tap a photo to enlarge it. Add as many as you like and your whole order goes to Melissa on WhatsApp.',vtag:'See the details up close',hTag:'Handmade',hTit:'Sewn by Melissa on her grandmother’s machine',hP:'Melissa makes every cushion with her own hands, on the sewing machine she inherited from her grandmother. Each one carries a bit of family love.',d1t:'Microfiber and American fabric',d1p:'Soft to the touch and lovely to look at, for the living room, the bed or a gift.',d2t:'Glitter powder details',d2p:'Some designs carry a special sparkle that shines under the Christmas lights.',chip:'Handmade',musOn:'Music',musOff:'Muted',cTit:'Order from Melissa',cSub:'Ask about prices, sizes and delivery directly on WhatsApp.',cBtn:'Open WhatsApp',pie:'Los Cojines de Melissa · Orders on WhatsApp +57 321 875 3355',hecho:'App made by',carro:'cushions in your order',carroBtn:'View order',cerrar:'Close',pedTit:'Your order',nom:'Your name',dir:'Delivery neighborhood / city',nota:'Note (optional)',enviar:'Send order on WhatsApp',
   cats:{todos:'All',santa:'Santa',pesebre:'Nativity',nieve:'Snow & reindeer',arbol:'Trees, home & village'},add:'Add',ok:'Added',fotos:'photos',
   waHola:'Hi Melissa, I saw your Christmas cushions in the app and would like more information.',waPed:'Hi Melissa, I would like to order these Christmas cushions:',waNom:'Name',waDir:'Delivery',waNota:'Note',waPre:'Could you confirm price and availability? Thank you.',vacio:'You haven’t added any cushions yet.',quitar:'Remove'}
 };
@@ -320,8 +323,17 @@ function mostrar(){$('#visorImg').src=`img/${VP.img[VI]}.jpg`;$('#prev').style.d
 $('#prev').onclick=()=>{VI=(VI-1+VP.img.length)%VP.img.length;mostrar()};
 $('#next').onclick=()=>{VI=(VI+1)%VP.img.length;mostrar()};
 $('#cerrarVisor').onclick=()=>$('#visor').classList.remove('on');
-document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{L=b.dataset.l;try{localStorage.setItem('lang',L)}catch(e){}textos();filtros();grid()});
-textos();filtros();grid();carro();
+document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{L=b.dataset.l;try{localStorage.setItem('lang',L)}catch(e){}textos();filtros();grid();musUI()});
+
+// música de fondo: Noche de Paz (dominio público), arranca con el primer toque
+const mus=$('#musica');mus.volume=.35;let musPref=localStorage.getItem('musica')!=='no';
+function musUI(){const b=$('#musBtn');b.textContent=(!mus.paused)?T[L].musOn:T[L].musOff;b.classList.toggle('mus',!mus.paused)}
+function musPlay(){mus.play().then(musUI).catch(()=>{})}
+['pointerdown','touchstart','keydown'].forEach(ev=>document.addEventListener(ev,function arr(e){if(e.target.id!=='musBtn'&&musPref&&mus.paused)musPlay();},{once:true,passive:true}));
+$('#musBtn').onclick=()=>{if(mus.paused){musPref=true;musPlay()}else{musPref=false;mus.pause();musUI()}try{localStorage.setItem('musica',musPref?'si':'no')}catch(e){}};
+document.addEventListener('visibilitychange',()=>{if(document.hidden)mus.pause();else if(musPref&&mus.currentTime>0)musPlay();musUI()});
+mus.addEventListener('pause',musUI);mus.addEventListener('play',musUI);
+textos();filtros();grid();carro();musUI();
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
 </body>

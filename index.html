@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="img/icon-192.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Los Cojines de Melissa · Cojines navideños">
-<meta property="og:description" content="18 diseños navideños: Papá Noel, pesebres, muñecos de nieve y árboles. Pide por WhatsApp 321 875 3355.">
+<meta property="og:description" content="19 diseños navideños hechos a mano por Melissa: Papá Noel, pesebres, muñecos de nieve y árboles. Pide por WhatsApp 321 875 3355.">
 <meta property="og:image" content="https://cojines-melissa.netlify.app/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -53,6 +53,18 @@ a{color:inherit}
 .nieve{position:absolute;inset:0;z-index:1;pointer-events:none}
 .nieve s{position:absolute;top:-10px;width:6px;height:6px;border-radius:50%;background:#fff;opacity:.8;animation:cae linear infinite;text-decoration:none}
 @keyframes cae{to{transform:translate(30px,105vh)}}
+.historia{max-width:1150px}
+.hist{display:grid;grid-template-columns:minmax(240px,380px) 1fr;gap:28px;align-items:center;background:var(--verde);color:#fff;border-radius:28px;padding:22px;overflow:hidden}
+.vid{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.vid video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover}
+.vtag{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.6);padding:6px 12px;border-radius:14px;font-weight:800;font-size:.8rem}
+.htxt h2{font-size:clamp(1.7rem,4.5vw,2.5rem);color:var(--oro);margin:12px 0 10px;line-height:1.1}
+.htxt p{opacity:.92;font-size:1.05rem}
+.dato{margin-top:14px;padding:14px 16px;border-left:4px solid var(--oro);background:rgba(255,255,255,.07);border-radius:0 14px 14px 0}
+.dato b{display:block;color:var(--oro);font-size:1.05rem}
+.dato span{opacity:.9;font-size:.93rem}
+@media (max-width:700px){.hist{grid-template-columns:1fr}.vid{max-width:320px;margin:0 auto}}
+.foto{background:#14201a}
 /* cinta */
 .cinta{background:var(--rojo);color:#fff;overflow:hidden;white-space:nowrap;padding:11px 0;font-weight:800;letter-spacing:.04em}
 .cinta div{display:inline-block;animation:corre 26s linear infinite;padding-left:100%}
@@ -141,14 +153,14 @@ footer a{color:var(--rojo);font-weight:800;text-decoration:none}
   <div class="hero-in">
     <span class="tag" data-t="tag">Temporada navideña 2026</span>
     <h1 data-t="h1" data-html>Cojines que <span>visten tu Navidad</span></h1>
-    <p data-t="sub">Papá Noel, pesebres, muñecos de nieve y árboles. 18 diseños para llenar de magia la sala, la cama o el regalo perfecto.</p>
+    <p data-t="sub">Papá Noel, pesebres, muñecos de nieve y árboles. 19 diseños para llenar de magia la sala, la cama o el regalo perfecto.</p>
     <a class="cta" href="#catalogo" data-t="ver">Ver los cojines</a>
     <a class="cta alt" id="waHero" target="_blank" rel="noopener" data-t="hablar">Escríbele a Melissa</a>
   </div>
   <div class="dots" id="dots"></div>
 </div>
 
-<div class="cinta"><div data-t="cinta">COJINES NAVIDEÑOS · DISEÑOS EN TEJIDO TIPO GOBELINO Y ESTAMPADOS CON BRILLO · PIDE POR WHATSAPP 321 875 3355 · IDEALES PARA REGALAR · COJINES NAVIDEÑOS · PIDE POR WHATSAPP 321 875 3355</div></div>
+<div class="cinta"><div data-t="cinta">COJINES NAVIDEÑOS HECHOS A MANO · TELA MICROFIBRA Y TELA AMERICANA · PIDE POR WHATSAPP 321 875 3355</div></div>
 
 <section id="catalogo">
   <div class="tit">
@@ -159,11 +171,16 @@ footer a{color:var(--rojo);font-weight:800;text-decoration:none}
   <div class="grid" id="grid"></div>
 </section>
 
-<section>
-  <div class="tit"><h2 data-t="matTit">Dos estilos, una sola Navidad</h2></div>
-  <div class="bandas">
-    <div class="banda"><img src="img/reyes-magos.jpg" alt="" loading="lazy"><div><h3 data-t="m1t">Tejido tipo gobelino</h3><p data-t="m1p">Diseños tejidos con hilos de colores y destellos metálicos, con ese aire clásico de los tapices.</p></div></div>
-    <div class="banda"><img src="img/arbol-sala.jpg" alt="" loading="lazy"><div><h3 data-t="m2t">Estampado con brillo</h3><p data-t="m2p">Imágenes llenas de color y detalles con brillo que se roban las miradas en cualquier sofá.</p></div></div>
+<section class="historia">
+  <div class="hist">
+    <div class="vid"><video src="img/detalle-melissa.mp4" poster="img/detalle-poster.jpg" autoplay muted loop playsinline></video><span class="vtag" data-t="vtag">Mira los detalles de cerca</span></div>
+    <div class="htxt">
+      <span class="tag" data-t="hTag">Hechos a mano</span>
+      <h2 data-t="hTit">Cosidos por Melissa en la máquina de la abuela</h2>
+      <p data-t="hP">Cada cojín lo hace Melissa con sus propias manos, en la máquina de coser que heredó de su abuela. Por eso cada uno lleva cariño de familia.</p>
+      <div class="dato"><b data-t="d1t">Tela microfibra y tela americana</b><span data-t="d1p">Suaves al tacto y lindas a la vista, para la sala, la cama o el regalo.</span></div>
+      <div class="dato"><b data-t="d2t">Detalles con polvos americanos</b><span data-t="d2p">Algunos diseños llevan un brillo especial que resalta con las luces de Navidad.</span></div>
+    </div>
   </div>
 </section>
 
@@ -213,7 +230,7 @@ const P=[
  {id:'santa-arbol',cat:'santa',mat:'est',img:['santa-arbol-patchwork'],es:['Papá Noel con arbolito','Papá Noel abrazando su árbol, con marco tipo patchwork y flores de Navidad.'],en:['Santa with a little tree','Santa holding his tree, patchwork frame with poinsettias.']},
  {id:'pesebre-granero',cat:'pesebre',mat:'est',img:['pesebre-granero'],es:['Pesebre en el granero','La Sagrada Familia en un granero nevado con lucecitas cálidas.'],en:['Nativity in the barn','The Holy Family in a snowy barn with warm string lights.']},
  {id:'nacimiento-estrella',cat:'pesebre',mat:'est',img:['nacimiento-estrella'],es:['Nacimiento bajo la estrella','El Niño Dios en el pesebre con buey, burrito y ovejitas, cielo azul de Belén.'],en:['Nativity under the star','Baby Jesus in the manger with ox, donkey and lambs under Bethlehem’s blue sky.']},
- {id:'reyes-magos',cat:'pesebre',mat:'gob',img:['reyes-magos','reyes-magos-2'],es:['Adoración de los Reyes Magos','Los tres Reyes adorando al Niño Dios, tejido con destellos dorados.'],en:['Adoration of the Magi','The three Kings worshipping the Child, woven with golden sparkles.']},
+ {id:'reyes-magos',cat:'pesebre',mat:'gob',img:['reyes-magos','reyes-magos-2','reyes-magos-3'],es:['Adoración de los Reyes Magos','Los tres Reyes adorando al Niño Dios, tejido con destellos dorados.'],en:['Adoration of the Magi','The three Kings worshipping the Child, woven with golden sparkles.']},
  {id:'sf-azul',cat:'pesebre',mat:'gob',img:['sagrada-familia-azul'],es:['Sagrada Familia con ángel (noche)','José, María, el Niño y un ángel, con fondo de cielo nocturno.'],en:['Holy Family with angel (night)','Joseph, Mary, the Child and an angel against a night sky.']},
  {id:'sf-dorado',cat:'pesebre',mat:'gob',img:['sagrada-familia-dorado'],es:['Sagrada Familia con ángel (dorado)','La misma escena en tonos dorados y crema, muy elegante.'],en:['Holy Family with angel (gold)','The same scene in elegant gold and cream tones.']},
  {id:'camino-belen',cat:'pesebre',mat:'est',img:['camino-belen'],es:['Camino de la Sagrada Familia','José guiando el burrito con María y el Niño al atardecer.'],en:['The Holy Family’s journey','Joseph leading the donkey with Mary and the Child at sunset.']},
@@ -222,17 +239,18 @@ const P=[
  {id:'muneco-reno',cat:'nieve',mat:'gob',img:['muneco-reno'],es:['Muñeco de nieve y reno','Un tierno encuentro entre el muñeco de nieve y el reno frente a la cabaña.'],en:['Snowman and reindeer','A sweet moment between a snowman and a reindeer by the cabin.']},
  {id:'gnomo',cat:'nieve',mat:'gob',img:['gnomo-sombrilla'],es:['Gnomo con sombrilla','Gnomo navideño bajo una sombrilla floral mientras cae la nieve.'],en:['Gnome with umbrella','A Christmas gnome under a floral umbrella in the falling snow.']},
  {id:'reno-luces',cat:'nieve',mat:'gob',img:['reno-luces'],es:['Reno sonriente','Reno de nariz roja con luces en los cachos y bufanda de estrellas.'],en:['Smiling reindeer','Red-nosed reindeer with lights on its antlers and a starry scarf.']},
+ {id:'pueblo-navideno',cat:'arbol',mat:'gob',img:['pueblo-navideno'],es:['Pueblo en Navidad','La plaza nevada con el gran árbol, la iglesia, el coche de caballos y niños haciendo un muñeco de nieve.'],en:['Christmas village','A snowy town square with a big tree, the church, a horse carriage and children building a snowman.']},
  {id:'arbol-estrellas',cat:'arbol',mat:'est',img:['arbol-estrellas'],es:['Árbol bajo las estrellas','Árbol iluminado con regalos rojos y montañas nevadas.'],en:['Tree under the stars','Glowing tree with red gifts and snowy mountains.']},
  {id:'arbol-sala',cat:'arbol',mat:'est',img:['arbol-sala'],es:['Árbol en la sala','Gran árbol decorado entre ventanales y sillones rojos.'],en:['Tree in the living room','A grand decorated tree between tall windows and red armchairs.']},
  {id:'gatito-arbol',cat:'arbol',mat:'gob',img:['gatito-arbol'],es:['Gatito y árbol de Navidad','Un gatito curioso sobre los regalos junto al arbolito.'],en:['Kitten and Christmas tree','A curious kitten on the gifts beside the tree.']},
  {id:'medias-chimenea',cat:'arbol',mat:'est',img:['medias-chimenea'],es:['Medias junto a la chimenea','Las medias navideñas colgadas frente al fuego y el árbol.'],en:['Stockings by the fireplace','Christmas stockings hung by the fire and the tree.']}
 ];
 const T={
- es:{tag:'Temporada navideña 2026',h1:'Cojines que <span>visten tu Navidad</span>',sub:'Papá Noel, pesebres, muñecos de nieve y árboles. 18 diseños para llenar de magia la sala, la cama o el regalo perfecto.',ver:'Ver los cojines',hablar:'Escríbele a Melissa',cinta:'COJINES NAVIDEÑOS · TEJIDO TIPO GOBELINO Y ESTAMPADOS CON BRILLO · PIDE POR WHATSAPP 321 875 3355 · IDEALES PARA REGALAR · COJINES NAVIDEÑOS · PIDE POR WHATSAPP 321 875 3355',catTit:'Escoge tus favoritos',catSub:'Toca la foto para verla grande. Agrega los que quieras y le llega todo el pedido a Melissa por WhatsApp.',matTit:'Dos estilos, una sola Navidad',m1t:'Tejido tipo gobelino',m1p:'Diseños tejidos con hilos de colores y destellos metálicos, con ese aire clásico de los tapices.',m2t:'Estampado con brillo',m2p:'Imágenes llenas de color y detalles con brillo que se roban las miradas en cualquier sofá.',cTit:'Pídeselos a Melissa',cSub:'Pregúntale precios, medidas y entregas directamente por WhatsApp.',cBtn:'Abrir WhatsApp',pie:'Los Cojines de Melissa · Pedidos por WhatsApp +57 321 875 3355',hecho:'App hecha por',carro:'cojines en tu pedido',carroBtn:'Ver pedido',cerrar:'Cerrar',pedTit:'Tu pedido',nom:'Tu nombre',dir:'Barrio / ciudad de entrega',nota:'Nota (opcional)',enviar:'Enviar pedido por WhatsApp',
-  cats:{todos:'Todos',santa:'Papá Noel',pesebre:'Pesebres',nieve:'Nieve y renos',arbol:'Árboles y hogar'},mat:{gob:'Gobelino',est:'Estampado'},add:'Agregar',ok:'Agregado',fotos:'fotos',
+ es:{tag:'Temporada navideña 2026',h1:'Cojines que <span>visten tu Navidad</span>',sub:'Papá Noel, pesebres, muñecos de nieve y árboles. 19 diseños para llenar de magia la sala, la cama o el regalo perfecto.',ver:'Ver los cojines',hablar:'Escríbele a Melissa',cinta:'COJINES NAVIDEÑOS HECHOS A MANO · TELA MICROFIBRA Y TELA AMERICANA · DETALLES CON POLVOS AMERICANOS · PIDE POR WHATSAPP 321 875 3355 · IDEALES PARA REGALAR · COJINES NAVIDEÑOS HECHOS A MANO · PIDE POR WHATSAPP 321 875 3355',catTit:'Escoge tus favoritos',catSub:'Toca la foto para verla grande. Agrega los que quieras y le llega todo el pedido a Melissa por WhatsApp.',vtag:'Mira los detalles de cerca',hTag:'Hechos a mano',hTit:'Cosidos por Melissa en la máquina de la abuela',hP:'Cada cojín lo hace Melissa con sus propias manos, en la máquina de coser que heredó de su abuela. Por eso cada uno lleva cariño de familia.',d1t:'Tela microfibra y tela americana',d1p:'Suaves al tacto y lindas a la vista, para la sala, la cama o el regalo.',d2t:'Detalles con polvos americanos',d2p:'Algunos diseños llevan un brillo especial que resalta con las luces de Navidad.',chip:'Hecho a mano',cTit:'Pídeselos a Melissa',cSub:'Pregúntale precios, medidas y entregas directamente por WhatsApp.',cBtn:'Abrir WhatsApp',pie:'Los Cojines de Melissa · Pedidos por WhatsApp +57 321 875 3355',hecho:'App hecha por',carro:'cojines en tu pedido',carroBtn:'Ver pedido',cerrar:'Cerrar',pedTit:'Tu pedido',nom:'Tu nombre',dir:'Barrio / ciudad de entrega',nota:'Nota (opcional)',enviar:'Enviar pedido por WhatsApp',
+  cats:{todos:'Todos',santa:'Papá Noel',pesebre:'Pesebres',nieve:'Nieve y renos',arbol:'Árboles, hogar y pueblo'},add:'Agregar',ok:'Agregado',fotos:'fotos',
   waHola:'Hola Melissa, vi tus cojines navideños en la app y quiero información.',waPed:'Hola Melissa, quiero pedir estos cojines navideños:',waNom:'Nombre',waDir:'Entrega',waNota:'Nota',waPre:'¿Me confirmas precio y disponibilidad? Gracias.',vacio:'Aún no has agregado cojines.',quitar:'Quitar'},
- en:{tag:'Christmas season 2026',h1:'Cushions that <span>dress up your Christmas</span>',sub:'Santa, nativity scenes, snowmen and trees. 18 designs to fill your living room, bed or perfect gift with magic.',ver:'See the cushions',hablar:'Message Melissa',cinta:'CHRISTMAS CUSHIONS · GOBELIN-STYLE WEAVE AND GLITTER PRINTS · ORDER ON WHATSAPP +57 321 875 3355 · PERFECT GIFTS · CHRISTMAS CUSHIONS · ORDER ON WHATSAPP +57 321 875 3355',catTit:'Pick your favorites',catSub:'Tap a photo to enlarge it. Add as many as you like and your whole order goes to Melissa on WhatsApp.',matTit:'Two styles, one Christmas',m1t:'Gobelin-style weave',m1p:'Designs woven with colored threads and metallic sparkle, with the classic look of tapestries.',m2t:'Glitter print',m2p:'Colorful images with glitter details that steal the show on any sofa.',cTit:'Order from Melissa',cSub:'Ask about prices, sizes and delivery directly on WhatsApp.',cBtn:'Open WhatsApp',pie:'Los Cojines de Melissa · Orders on WhatsApp +57 321 875 3355',hecho:'App made by',carro:'cushions in your order',carroBtn:'View order',cerrar:'Close',pedTit:'Your order',nom:'Your name',dir:'Delivery neighborhood / city',nota:'Note (optional)',enviar:'Send order on WhatsApp',
-  cats:{todos:'All',santa:'Santa',pesebre:'Nativity',nieve:'Snow & reindeer',arbol:'Trees & home'},mat:{gob:'Gobelin',est:'Print'},add:'Add',ok:'Added',fotos:'photos',
+ en:{tag:'Christmas season 2026',h1:'Cushions that <span>dress up your Christmas</span>',sub:'Santa, nativity scenes, snowmen and trees. 19 designs to fill your living room, bed or perfect gift with magic.',ver:'See the cushions',hablar:'Message Melissa',cinta:'HANDMADE CHRISTMAS CUSHIONS · MICROFIBER AND AMERICAN FABRIC · GLITTER POWDER DETAILS · ORDER ON WHATSAPP +57 321 875 3355 · PERFECT GIFTS · HANDMADE CHRISTMAS CUSHIONS · ORDER ON WHATSAPP +57 321 875 3355',catTit:'Pick your favorites',catSub:'Tap a photo to enlarge it. Add as many as you like and your whole order goes to Melissa on WhatsApp.',vtag:'See the details up close',hTag:'Handmade',hTit:'Sewn by Melissa on her grandmother’s machine',hP:'Melissa makes every cushion with her own hands, on the sewing machine she inherited from her grandmother. Each one carries a bit of family love.',d1t:'Microfiber and American fabric',d1p:'Soft to the touch and lovely to look at, for the living room, the bed or a gift.',d2t:'Glitter powder details',d2p:'Some designs carry a special sparkle that shines under the Christmas lights.',chip:'Handmade',cTit:'Order from Melissa',cSub:'Ask about prices, sizes and delivery directly on WhatsApp.',cBtn:'Open WhatsApp',pie:'Los Cojines de Melissa · Orders on WhatsApp +57 321 875 3355',hecho:'App made by',carro:'cushions in your order',carroBtn:'View order',cerrar:'Close',pedTit:'Your order',nom:'Your name',dir:'Delivery neighborhood / city',nota:'Note (optional)',enviar:'Send order on WhatsApp',
+  cats:{todos:'All',santa:'Santa',pesebre:'Nativity',nieve:'Snow & reindeer',arbol:'Trees, home & village'},add:'Add',ok:'Added',fotos:'photos',
   waHola:'Hi Melissa, I saw your Christmas cushions in the app and would like more information.',waPed:'Hi Melissa, I would like to order these Christmas cushions:',waNom:'Name',waDir:'Delivery',waNota:'Note',waPre:'Could you confirm price and availability? Thank you.',vacio:'You haven’t added any cushions yet.',quitar:'Remove'}
 };
 let L=localStorage.getItem('lang')||'es',F='todos',C={};
@@ -264,7 +282,7 @@ function grid(){
  P.filter(p=>F==='todos'||p.cat===F).forEach((p,i)=>{
   const q=C[p.id]||0;
   const c=document.createElement('article');c.className='card';c.style.transitionDelay=(i%4)*70+'ms';
-  c.innerHTML=`<div class="foto"><img src="img/${p.img[0]}.jpg" alt="${p[L][0]}" loading="lazy"><span class="chip">${T[L].mat[p.mat]}</span>${p.img.length>1?`<span class="mas">${p.img.length} ${T[L].fotos}</span>`:''}</div>
+  c.innerHTML=`<div class="foto"><img src="img/${p.img[0]}.jpg" alt="${p[L][0]}" loading="lazy"><span class="chip">${T[L].chip}</span>${p.img.length>1?`<span class="mas">${p.img.length} ${T[L].fotos}</span>`:''}</div>
   <div class="info"><h3>${p[L][0]}</h3><p>${p[L][1]}</p>
   <div class="fila"><div class="cant"><button data-a="-">−</button><span>${q||1}</span><button data-a="+">+</button></div>
   <button class="add ${q?'ok':''}">${q?T[L].ok+' ('+q+')':T[L].add}</button></div></div>`;

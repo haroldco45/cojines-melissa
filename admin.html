@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Panel de Melissa · Los Cojines de Melissa</title>
+<meta name="theme-color" content="#14201a">
+<link rel="icon" href="img/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#14201a;--verde2:#1f3328;--rojo:#b3202f;--oro:#e9c46a;--crema:#fbf6ec;--ok:#1fa855}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Nunito,system-ui,sans-serif;background:var(--crema);color:#1d1d1d;padding-bottom:110px}
+h1,h2{font-family:"Playfair Display",Georgia,serif}
+button{font:inherit;cursor:pointer}
+input,textarea,select{font:inherit;width:100%;padding:11px 12px;border:2px solid #e3dccd;border-radius:12px;background:#fff}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--oro)}
+label{display:block;font-weight:800;font-size:.85rem;margin:10px 0 4px;color:var(--verde)}
+.top{position:sticky;top:0;z-index:20;background:var(--verde);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.top h1{font-size:1.15rem;color:var(--oro)}
+.top a,.top button{color:#fff;border:1px solid rgba(255,255,255,.4);background:none;border-radius:20px;padding:6px 12px;font-weight:800;font-size:.8rem;text-decoration:none;white-space:nowrap}
+.wrap{max-width:900px;margin:0 auto;padding:16px}
+/* login */
+#login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(160deg,#14201a,#5a0f18)}
+.caja{background:#fff;border-radius:24px;padding:28px 22px;max-width:380px;width:100%;text-align:center}
+.caja img{width:110px;height:110px;border-radius:22px;object-fit:cover;margin-bottom:12px}
+.caja h2{color:var(--verde);margin-bottom:6px}
+.caja p{color:#666;font-size:.92rem;margin-bottom:14px}
+.btn{border:0;border-radius:30px;padding:13px 20px;font-weight:800;color:#fff;background:var(--rojo)}
+.btn.verde{background:var(--ok)}.btn.gris{background:#777}.btn.oscuro{background:var(--verde)}
+.btn.full{width:100%;margin-top:14px}
+.err{color:var(--rojo);font-weight:800;margin-top:10px;min-height:1.2em}
+/* resumen */
+.res{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.res div{background:#fff;border-radius:16px;padding:12px 8px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.res b{display:block;font-size:1.6rem;color:var(--verde)}
+.res span{font-size:.75rem;font-weight:800;color:#666}
+.res .d b{color:var(--ok)}.res .p b{color:#b8860b}.res .a b{color:var(--rojo)}
+.barra{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.barra input{flex:1;min-width:180px}
+.ayuda{background:#fff7e0;border-left:4px solid var(--oro);padding:12px 14px;border-radius:0 14px 14px 0;font-size:.9rem;margin-bottom:14px}
+/* tarjetas */
+.item{background:#fff;border-radius:20px;box-shadow:0 6px 20px rgba(0,0,0,.08);margin-bottom:16px;overflow:hidden}
+.item.oculto{opacity:.6}
+.cab{display:flex;gap:12px;padding:12px;align-items:center;cursor:pointer}
+.cab img{width:74px;height:74px;border-radius:14px;object-fit:cover;background:#eee;flex:none}
+.cab .t{flex:1;min-width:0}
+.cab .t b{display:block;font-size:1.02rem;color:var(--verde);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cab .t small{color:#666;font-weight:600}
+.pill{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.72rem;font-weight:800;margin-top:4px}
+.pill.disponible{background:#dff5e7;color:#127a3c}.pill.pocos{background:#fdf0c8;color:#8a6500}.pill.agotado{background:#f6d6d9;color:var(--rojo)}
+.cuerpo{padding:0 14px 16px;display:none;border-top:1px solid #f0eadc}
+.item.abierto .cuerpo{display:block}
+.estados{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.estados button{border:2px solid #e3dccd;background:#fff;border-radius:12px;padding:10px 4px;font-weight:800;font-size:.85rem}
+.estados button.on.disponible{background:var(--ok);border-color:var(--ok);color:#fff}
+.estados button.on.pocos{background:var(--oro);border-color:var(--oro);color:var(--verde)}
+.estados button.on.agotado{background:var(--rojo);border-color:var(--rojo);color:#fff}
+.fotos{display:flex;gap:8px;overflow-x:auto;padding:4px 0}
+.ft{position:relative;flex:none;width:110px}
+.ft img{width:110px;height:110px;object-fit:cover;border-radius:12px;border:3px solid transparent}
+.ft.princ img{border-color:var(--oro)}
+.ft .acc{display:flex;gap:4px;margin-top:4px}
+.ft .acc button{flex:1;border:0;border-radius:8px;padding:5px 2px;font-size:.7rem;font-weight:800;background:#eee}
+.ft .acc .q{background:#f6d6d9;color:var(--rojo)}
+.subir{flex:none;width:110px;height:110px;border:2px dashed #cbbf9f;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:.8rem;color:#8a7a50;cursor:pointer;padding:6px}
+.subir input{display:none}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sw{display:flex;align-items:center;gap:10px;margin-top:14px;font-weight:800}
+.sw input{width:22px;height:22px}
+.acciones{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.acciones button{border:0;border-radius:20px;padding:9px 14px;font-weight:800;font-size:.82rem;background:#eee}
+.acciones .del{background:#f6d6d9;color:var(--rojo);margin-left:auto}
+/* guardar */
+.guardar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;box-shadow:0 -6px 24px rgba(0,0,0,.15);padding:12px 16px;display:flex;align-items:center;gap:12px;justify-content:space-between}
+.guardar span{font-weight:800;font-size:.9rem;color:#666}
+.guardar span.pend{color:var(--rojo)}
+.toast{position:fixed;left:50%;top:70px;transform:translateX(-50%) translateY(-150%);background:var(--verde);color:#fff;padding:12px 20px;border-radius:30px;font-weight:800;z-index:50;transition:.35s;max-width:90%;text-align:center}
+.toast.on{transform:translateX(-50%) translateY(0)}
+.cargando{position:fixed;inset:0;background:rgba(20,32,26,.7);z-index:60;display:none;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.1rem}
+.cargando.on{display:flex}
+@media (max-width:520px){.res{grid-template-columns:repeat(2,1fr)}.dos{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div id="login">
+  <div class="caja">
+    <img src="img/santa-trineo-luna.jpg" alt="">
+    <h2>Panel de Melissa</h2>
+    <p>Aquí subes fotos, pones precios y marcas qué cojines tienes disponibles.</p>
+    <input id="clave" type="password" placeholder="Escribe tu clave" autocomplete="current-password">
+    <button class="btn full" id="entrar">Entrar</button>
+    <div class="err" id="errLogin"></div>
+  </div>
+</div>
+
+<div id="panel" style="display:none">
+  <header class="top">
+    <h1>Panel de Melissa</h1>
+    <div style="display:flex;gap:6px">
+      <a href="./" target="_blank" rel="noopener">Ver la página</a>
+      <button id="salir">Salir</button>
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="res">
+      <div><b id="rTot">0</b><span>Cojines</span></div>
+      <div class="d"><b id="rDis">0</b><span>Disponibles</span></div>
+      <div class="p"><b id="rPoc">0</b><span>Últimas unidades</span></div>
+      <div class="a"><b id="rAgo">0</b><span>Agotados</span></div>
+    </div>
+    <div class="ayuda">Toca un cojín para abrirlo y cambiar su foto, precio o existencia. Cuando termines, toca <b>Guardar cambios</b> abajo y la página de los clientes se actualiza al instante.</div>
+    <div class="barra">
+      <input id="buscar" placeholder="Buscar cojín por nombre">
+      <button class="btn oscuro" id="nuevo">Agregar cojín nuevo</button>
+    </div>
+    <label class="sw" style="margin:0 0 14px"><input type="checkbox" id="fondoNav" checked> Ponerle fondo navideño a las fotos nuevas</label>
+    <div id="lista"></div>
+  </div>
+  <div class="guardar">
+    <span id="estadoG">Todo guardado</span>
+    <button class="btn verde" id="btnGuardar">Guardar cambios</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="cargando" id="cargando">Subiendo foto...</div>
+
+<script>
+const $=s=>document.querySelector(s);
+const CATS={santa:'Papá Noel',pesebre:'Pesebres',nieve:'Nieve y renos',arbol:'Árboles, hogar y pueblo'};
+const EST={disponible:'Disponible',pocos:'Últimas unidades',agotado:'Agotado'};
+let CLAVE=localStorage.getItem('claveMel')||'', P=[], cambios=false, abierto=null;
+
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),2600)}
+function marcar(){cambios=true;const e=$('#estadoG');e.textContent='Hay cambios sin guardar';e.className='pend';resumen()}
+const cop=n=>'$ '+Number(n).toLocaleString('es-CO');
+
+async function api(url,opt={}){opt.headers=Object.assign({'x-clave':CLAVE},opt.headers||{});return fetch(url,opt)}
+
+async function entrar(){
+  const c=$('#clave').value.trim()||CLAVE; if(!c)return;
+  CLAVE=c; $('#errLogin').textContent='Revisando...';
+  try{
+    const r=await api('/api/catalogo?login=1',{method:'POST'});
+    if(r.status===401){$('#errLogin').textContent='Clave incorrecta';localStorage.removeItem('claveMel');return}
+    if(!r.ok)throw 0;
+    localStorage.setItem('claveMel',CLAVE); $('#login').style.display='none'; $('#panel').style.display='block'; cargar();
+  }catch(e){$('#errLogin').textContent='No hay conexión con el servidor. Intenta de nuevo.'}
+}
+$('#entrar').onclick=entrar; $('#clave').onkeydown=e=>{if(e.key==='Enter')entrar()};
+$('#salir').onclick=()=>{if(cambios&&!confirm('Tienes cambios sin guardar. ¿Salir de todas formas?'))return;localStorage.removeItem('claveMel');location.reload()};
+
+async function cargar(){
+  let lista=null;
+  try{const r=await fetch('/api/catalogo',{cache:'no-store'});const d=await r.json();lista=d.productos}catch(e){}
+  if(!lista){const r=await fetch('productos.json',{cache:'no-store'});lista=(await r.json()).productos}
+  P=lista; pintar(); resumen();
+}
+function resumen(){
+  $('#rTot').textContent=P.length;
+  $('#rDis').textContent=P.filter(p=>p.estado==='disponible').length;
+  $('#rPoc').textContent=P.filter(p=>p.estado==='pocos').length;
+  $('#rAgo').textContent=P.filter(p=>p.estado==='agotado').length;
+}
+function pintar(){
+  const q=$('#buscar').value.trim().toLowerCase(), L=$('#lista'); L.innerHTML='';
+  P.forEach((p,i)=>{
+    if(q&&!p.es[0].toLowerCase().includes(q))return;
+    const d=document.createElement('div'); d.className='item'+(abierto===p.id?' abierto':'')+(p.visible===false?' oculto':'');
+    d.innerHTML=`<div class="cab"><img src="${p.img[0]||''}" alt=""><div class="t"><b></b><small>${p.precio?cop(p.precio):'Sin precio'} · ${CATS[p.cat]||''}${p.visible===false?' · Oculto':''}</small><br><span class="pill ${p.estado}">${EST[p.estado]}</span></div></div>
+    <div class="cuerpo">
+      <label>Existencia</label>
+      <div class="estados">${Object.keys(EST).map(k=>`<button class="${k}${p.estado===k?' on':''}" data-e="${k}">${EST[k]}</button>`).join('')}</div>
+      <div class="dos">
+        <div><label>Precio (pesos)</label><input class="precio" inputmode="numeric" placeholder="Ej: 45000" value="${p.precio||''}"></div>
+        <div><label>Categoría</label><select class="cat">${Object.entries(CATS).map(([k,v])=>`<option value="${k}" ${p.cat===k?'selected':''}>${v}</option>`).join('')}</select></div>
+      </div>
+      <label>Nombre</label><input class="nom">
+      <label>Descripción</label><textarea class="des" rows="2"></textarea>
+      <label>Fotos (la del borde dorado es la principal)</label>
+      <div class="fotos">${p.img.map((u,j)=>`<div class="ft${j?'':' princ'}"><img src="${u}" alt=""><div class="acc">${j?`<button data-p="${j}">Principal</button>`:''}<button class="q" data-q="${j}">Quitar</button></div></div>`).join('')}
+        <label class="subir">Agregar foto<input type="file" accept="image/*" multiple></label></div>
+      <label class="sw"><input type="checkbox" class="vis" ${p.visible!==false?'checked':''}> Mostrar en la página de clientes</label>
+      <div class="acciones">
+        <button data-m="-1">Subir</button><button data-m="1">Bajar</button>
+        <button class="del">Eliminar cojín</button>
+      </div>
+    </div>`;
+    d.querySelector('.cab b').textContent=p.es[0];
+    d.querySelector('.nom').value=p.es[0]; d.querySelector('.des').value=p.es[1]||'';
+    d.querySelector('.cab').onclick=()=>{abierto=abierto===p.id?null:p.id;pintar()};
+    d.querySelectorAll('[data-e]').forEach(b=>b.onclick=()=>{p.estado=b.dataset.e;marcar();pintar()});
+    d.querySelector('.precio').oninput=e=>{const v=e.target.value.replace(/\D/g,'');e.target.value=v;p.precio=v?Number(v):null;marcar();d.querySelector('.cab small').textContent=(p.precio?cop(p.precio):'Sin precio')+' · '+(CATS[p.cat]||'')};
+    d.querySelector('.cat').onchange=e=>{p.cat=e.target.value;marcar()};
+    d.querySelector('.nom').oninput=e=>{p.es[0]=e.target.value;p.en=null;d.querySelector('.cab b').textContent=e.target.value;marcar()};
+    d.querySelector('.des').oninput=e=>{p.es[1]=e.target.value;p.en=null;marcar()};
+    d.querySelector('.vis').onchange=e=>{p.visible=e.target.checked;marcar();pintar()};
+    d.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{const j=+b.dataset.p;p.img.unshift(p.img.splice(j,1)[0]);marcar();pintar()});
+    d.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{if(!confirm('¿Quitar esta foto?'))return;p.img.splice(+b.dataset.q,1);marcar();pintar()});
+    d.querySelector('input[type=file]').onchange=e=>subirFotos(p,[...e.target.files]);
+    d.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{const k=i+(+b.dataset.m);if(k<0||k>=P.length)return;[P[i],P[k]]=[P[k],P[i]];marcar();pintar()});
+    d.querySelector('.del').onclick=()=>{if(!confirm('¿Eliminar "'+p.es[0]+'"? Si solo se acabó, mejor márcalo como Agotado.'))return;P.splice(i,1);marcar();pintar()};
+    L.appendChild(d);
+  });
+}
+$('#buscar').oninput=pintar;
+$('#nuevo').onclick=()=>{
+  const p={id:'c'+Date.now().toString(36),cat:'arbol',img:[],es:['Cojín nuevo',''],en:null,precio:null,estado:'disponible',visible:true};
+  P.unshift(p);abierto=p.id;$('#buscar').value='';marcar();pintar();scrollTo({top:0,behavior:'smooth'});toast('Ponle nombre, precio y sube sus fotos');
+};
+
+// ---------- fotos: se achican en el celular y se les pone fondo navideño ----------
+function leer(file){return new Promise((ok,no)=>{const u=URL.createObjectURL(file);const im=new Image();im.onload=()=>ok(im);im.onerror=no;im.src=u})}
+function fondoNavidad(ctx,S){
+  const pal=[['#5c0e18','#18060a','255,190,90'],['#0e3a26','#04120c','255,205,110'],['#122046','#050816','220,230,255']][Math.floor(Math.random()*3)];
+  const g=ctx.createRadialGradient(S/2,S*.45,S*.05,S/2,S/2,S*.75);g.addColorStop(0,pal[0]);g.addColorStop(1,pal[1]);ctx.fillStyle=g;ctx.fillRect(0,0,S,S);
+  for(let i=0;i<70;i++){const r=8+Math.random()*40,x=Math.random()*S,y=Math.random()*S;const k=.15+Math.random()*.45;
+    const c=Math.random()<.75?pal[2]:'230,60,60';const gr=ctx.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,`rgba(${c},${k})`);gr.addColorStop(.7,`rgba(${c},${k*.6})`);gr.addColorStop(1,`rgba(${c},0)`);ctx.fillStyle=gr;ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fill()}
+  for(let i=0;i<140;i++){ctx.fillStyle=`rgba(255,255,255,${.3+Math.random()*.5})`;ctx.beginPath();ctx.arc(Math.random()*S,Math.random()*S,.8+Math.random()*2,0,7);ctx.fill()}
+  const gl=ctx.createRadialGradient(S/2,S/2,S*.1,S/2,S/2,S*.5);gl.addColorStop(0,`rgba(${pal[2]},.35)`);gl.addColorStop(1,`rgba(${pal[2]},0)`);ctx.fillStyle=gl;ctx.fillRect(0,0,S,S);
+}
+async function preparar(file,navidad){
+  const im=await leer(file), S=1000, cv=document.createElement('canvas'), ctx=cv.getContext('2d');
+  if(navidad){
+    cv.width=cv.height=S; fondoNavidad(ctx,S);
+    const m=Math.min(im.width,im.height), lado=S*.8, x=(S-lado)/2, y=(S-lado)/2+15;
+    ctx.save();ctx.shadowColor='rgba(0,0,0,.55)';ctx.shadowBlur=40;ctx.shadowOffsetY=18;
+    ctx.beginPath();ctx.roundRect(x,y,lado,lado,36);ctx.fillStyle='#000';ctx.fill();ctx.restore();
+    ctx.save();ctx.beginPath();ctx.roundRect(x,y,lado,lado,36);ctx.clip();
+    ctx.drawImage(im,(im.width-m)/2,(im.height-m)/2,m,m,x,y,lado,lado);ctx.restore();
+    ctx.strokeStyle='rgba(233,196,106,.85)';ctx.lineWidth=5;ctx.beginPath();ctx.roundRect(x,y,lado,lado,36);ctx.stroke();
+  }else{
+    const k=Math.min(1,1200/Math.max(im.width,im.height)); cv.width=Math.round(im.width*k); cv.height=Math.round(im.height*k);
+    ctx.drawImage(im,0,0,cv.width,cv.height);
+  }
+  return new Promise(ok=>cv.toBlob(ok,'image/jpeg',.84));
+}
+async function subirFotos(p,files){
+  if(!files.length)return; const nav=$('#fondoNav').checked; $('#cargando').classList.add('on');
+  try{
+    for(const f of files){
+      const blob=await preparar(f,nav);
+      const r=await api('/api/foto',{method:'POST',headers:{'content-type':'image/jpeg'},body:blob});
+      if(r.status===401){toast('La clave ya no sirve, vuelve a entrar');return}
+      const d=await r.json(); if(!d.url)throw 0; p.img.push(d.url);
+    }
+    marcar(); pintar(); toast('Foto lista. Acuérdate de guardar los cambios');
+  }catch(e){toast('No se pudo subir la foto. Revisa la conexión')}
+  finally{$('#cargando').classList.remove('on')}
+}
+
+// ---------- guardar ----------
+$('#btnGuardar').onclick=async()=>{
+  const sinFoto=P.filter(p=>p.visible!==false&&!p.img.length);
+  if(sinFoto.length){toast('"'+sinFoto[0].es[0]+'" no tiene foto. Súbele una o desmarca "Mostrar"');return}
+  $('#btnGuardar').disabled=true;$('#btnGuardar').textContent='Guardando...';
+  try{
+    const r=await api('/api/catalogo',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({productos:P})});
+    if(r.status===401){toast('La clave ya no sirve, vuelve a entrar');return}
+    if(!r.ok)throw 0;
+    cambios=false;$('#estadoG').textContent='Todo guardado';$('#estadoG').className='';toast('Listo, la página ya está actualizada');
+  }catch(e){toast('No se pudo guardar. Revisa la conexión e intenta otra vez')}
+  finally{$('#btnGuardar').disabled=false;$('#btnGuardar').textContent='Guardar cambios'}
+};
+addEventListener('beforeunload',e=>{if(cambios){e.preventDefault();e.returnValue=''}});
+if(CLAVE)entrar();
+</script>
+</body>
+</html>

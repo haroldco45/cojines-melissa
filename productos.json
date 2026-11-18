@@ -1,0 +1,349 @@
+{
+ "productos": [
+  {
+   "id": "santa-trineo",
+   "cat": "santa",
+   "img": [
+    "img/santa-trineo-luna.jpg"
+   ],
+   "es": [
+    "Papá Noel en trineo",
+    "Papá Noel con su reno bajo la luna llena, marco dorado de estilo vintage."
+   ],
+   "en": [
+    "Santa in his sleigh",
+    "Santa and his reindeer under the full moon, vintage golden frame."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "santa-renos",
+   "cat": "santa",
+   "img": [
+    "img/santa-renos.jpg",
+    "img/santa-renos-2.jpg"
+   ],
+   "es": [
+    "Papá Noel y sus renos",
+    "Noche de nieve con la casita iluminada y el saco de regalos."
+   ],
+   "en": [
+    "Santa and his reindeer",
+    "Snowy night, glowing cottage and a sack full of gifts."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "santa-arbol",
+   "cat": "santa",
+   "img": [
+    "img/santa-arbol-patchwork.jpg"
+   ],
+   "es": [
+    "Papá Noel con arbolito",
+    "Papá Noel abrazando su árbol, con marco tipo patchwork y flores de Navidad."
+   ],
+   "en": [
+    "Santa with a little tree",
+    "Santa holding his tree, patchwork frame with poinsettias."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "pesebre-granero",
+   "cat": "pesebre",
+   "img": [
+    "img/pesebre-granero.jpg"
+   ],
+   "es": [
+    "Pesebre en el granero",
+    "La Sagrada Familia en un granero nevado con lucecitas cálidas."
+   ],
+   "en": [
+    "Nativity in the barn",
+    "The Holy Family in a snowy barn with warm string lights."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "nacimiento-estrella",
+   "cat": "pesebre",
+   "img": [
+    "img/nacimiento-estrella.jpg"
+   ],
+   "es": [
+    "Nacimiento bajo la estrella",
+    "El Niño Dios en el pesebre con buey, burrito y ovejitas, cielo azul de Belén."
+   ],
+   "en": [
+    "Nativity under the star",
+    "Baby Jesus in the manger with ox, donkey and lambs under Bethlehem’s blue sky."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "reyes-magos",
+   "cat": "pesebre",
+   "img": [
+    "img/reyes-magos.jpg",
+    "img/reyes-magos-2.jpg",
+    "img/reyes-magos-3.jpg"
+   ],
+   "es": [
+    "Adoración de los Reyes Magos",
+    "Los tres Reyes adorando al Niño Dios, tejido con destellos dorados."
+   ],
+   "en": [
+    "Adoration of the Magi",
+    "The three Kings worshipping the Child, woven with golden sparkles."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "sf-azul",
+   "cat": "pesebre",
+   "img": [
+    "img/sagrada-familia-azul.jpg"
+   ],
+   "es": [
+    "Sagrada Familia con ángel (noche)",
+    "José, María, el Niño y un ángel, con fondo de cielo nocturno."
+   ],
+   "en": [
+    "Holy Family with angel (night)",
+    "Joseph, Mary, the Child and an angel against a night sky."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "sf-dorado",
+   "cat": "pesebre",
+   "img": [
+    "img/sagrada-familia-dorado.jpg"
+   ],
+   "es": [
+    "Sagrada Familia con ángel (dorado)",
+    "La misma escena en tonos dorados y crema, muy elegante."
+   ],
+   "en": [
+    "Holy Family with angel (gold)",
+    "The same scene in elegant gold and cream tones."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "camino-belen",
+   "cat": "pesebre",
+   "img": [
+    "img/camino-belen.jpg"
+   ],
+   "es": [
+    "Camino de la Sagrada Familia",
+    "José guiando el burrito con María y el Niño al atardecer."
+   ],
+   "en": [
+    "The Holy Family’s journey",
+    "Joseph leading the donkey with Mary and the Child at sunset."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "muneco-bosque",
+   "cat": "nieve",
+   "img": [
+    "img/muneco-bosque.jpg"
+   ],
+   "es": [
+    "Muñeco de nieve en el bosque",
+    "Con escoba, sombrero de copa, cardenales, venadito y conejitos."
+   ],
+   "en": [
+    "Snowman in the woods",
+    "With broom, top hat, cardinals, a fawn and bunnies."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "munecos-pajaritos",
+   "cat": "nieve",
+   "img": [
+    "img/munecos-pajaritos.jpg"
+   ],
+   "es": [
+    "Pareja de muñecos de nieve",
+    "Dos muñecos con canasta, gorros tejidos y pajaritos de colores."
+   ],
+   "en": [
+    "Snowman couple",
+    "Two snow friends with a basket, knit hats and colorful birds."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "muneco-reno",
+   "cat": "nieve",
+   "img": [
+    "img/muneco-reno.jpg"
+   ],
+   "es": [
+    "Muñeco de nieve y reno",
+    "Un tierno encuentro entre el muñeco de nieve y el reno frente a la cabaña."
+   ],
+   "en": [
+    "Snowman and reindeer",
+    "A sweet moment between a snowman and a reindeer by the cabin."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "gnomo",
+   "cat": "nieve",
+   "img": [
+    "img/gnomo-sombrilla.jpg"
+   ],
+   "es": [
+    "Gnomo con sombrilla",
+    "Gnomo navideño bajo una sombrilla floral mientras cae la nieve."
+   ],
+   "en": [
+    "Gnome with umbrella",
+    "A Christmas gnome under a floral umbrella in the falling snow."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "reno-luces",
+   "cat": "nieve",
+   "img": [
+    "img/reno-luces.jpg"
+   ],
+   "es": [
+    "Reno sonriente",
+    "Reno de nariz roja con luces en los cachos y bufanda de estrellas."
+   ],
+   "en": [
+    "Smiling reindeer",
+    "Red-nosed reindeer with lights on its antlers and a starry scarf."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "pueblo-navideno",
+   "cat": "arbol",
+   "img": [
+    "img/pueblo-navideno.jpg"
+   ],
+   "es": [
+    "Pueblo en Navidad",
+    "La plaza nevada con el gran árbol, la iglesia, el coche de caballos y niños haciendo un muñeco de nieve."
+   ],
+   "en": [
+    "Christmas village",
+    "A snowy town square with a big tree, the church, a horse carriage and children building a snowman."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "arbol-estrellas",
+   "cat": "arbol",
+   "img": [
+    "img/arbol-estrellas.jpg"
+   ],
+   "es": [
+    "Árbol bajo las estrellas",
+    "Árbol iluminado con regalos rojos y montañas nevadas."
+   ],
+   "en": [
+    "Tree under the stars",
+    "Glowing tree with red gifts and snowy mountains."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "arbol-sala",
+   "cat": "arbol",
+   "img": [
+    "img/arbol-sala.jpg"
+   ],
+   "es": [
+    "Árbol en la sala",
+    "Gran árbol decorado entre ventanales y sillones rojos."
+   ],
+   "en": [
+    "Tree in the living room",
+    "A grand decorated tree between tall windows and red armchairs."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "gatito-arbol",
+   "cat": "arbol",
+   "img": [
+    "img/gatito-arbol.jpg"
+   ],
+   "es": [
+    "Gatito y árbol de Navidad",
+    "Un gatito curioso sobre los regalos junto al arbolito."
+   ],
+   "en": [
+    "Kitten and Christmas tree",
+    "A curious kitten on the gifts beside the tree."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  },
+  {
+   "id": "medias-chimenea",
+   "cat": "arbol",
+   "img": [
+    "img/medias-chimenea.jpg"
+   ],
+   "es": [
+    "Medias junto a la chimenea",
+    "Las medias navideñas colgadas frente al fuego y el árbol."
+   ],
+   "en": [
+    "Stockings by the fireplace",
+    "Christmas stockings hung by the fire and the tree."
+   ],
+   "precio": null,
+   "estado": "disponible",
+   "visible": true
+  }
+ ]
+}

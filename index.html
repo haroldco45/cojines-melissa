@@ -66,6 +66,10 @@ a{color:inherit}
 .dato span{opacity:.9;font-size:.93rem}
 @media (max-width:700px){.hist{grid-template-columns:1fr}.vid{max-width:320px;margin:0 auto}}
 .foto{background:#14201a}
+.precio{font-weight:800;color:var(--rojo);font-size:1.15rem}.precio small{color:#777;font-weight:600;font-size:.85rem}
+.chip.est-disponible{background:rgba(31,168,85,.92);color:#fff}.chip.est-pocos{background:var(--oro);color:var(--verde)}.chip.est-agotado{background:#555;color:#fff}
+.card.agot .foto img{filter:grayscale(.85) brightness(.85)}.add:disabled{background:#999;cursor:not-allowed}.cant button:disabled{opacity:.4}
+.tot{margin-top:12px;font-size:1.05rem;text-align:right}
 /* cinta */
 .cinta{background:var(--rojo);color:#fff;overflow:hidden;white-space:nowrap;padding:11px 0;font-weight:800;letter-spacing:.04em}
 .cinta div{display:inline-block;animation:corre 26s linear infinite;padding-left:100%}
@@ -227,33 +231,15 @@ footer a{color:var(--rojo);font-weight:800;text-decoration:none}
 
 <script>
 const TEL='573218753355';
-const P=[
- {id:'santa-trineo',cat:'santa',mat:'est',img:['santa-trineo-luna'],es:['Papá Noel en trineo','Papá Noel con su reno bajo la luna llena, marco dorado de estilo vintage.'],en:['Santa in his sleigh','Santa and his reindeer under the full moon, vintage golden frame.']},
- {id:'santa-renos',cat:'santa',mat:'gob',img:['santa-renos','santa-renos-2'],es:['Papá Noel y sus renos','Noche de nieve con la casita iluminada y el saco de regalos.'],en:['Santa and his reindeer','Snowy night, glowing cottage and a sack full of gifts.']},
- {id:'santa-arbol',cat:'santa',mat:'est',img:['santa-arbol-patchwork'],es:['Papá Noel con arbolito','Papá Noel abrazando su árbol, con marco tipo patchwork y flores de Navidad.'],en:['Santa with a little tree','Santa holding his tree, patchwork frame with poinsettias.']},
- {id:'pesebre-granero',cat:'pesebre',mat:'est',img:['pesebre-granero'],es:['Pesebre en el granero','La Sagrada Familia en un granero nevado con lucecitas cálidas.'],en:['Nativity in the barn','The Holy Family in a snowy barn with warm string lights.']},
- {id:'nacimiento-estrella',cat:'pesebre',mat:'est',img:['nacimiento-estrella'],es:['Nacimiento bajo la estrella','El Niño Dios en el pesebre con buey, burrito y ovejitas, cielo azul de Belén.'],en:['Nativity under the star','Baby Jesus in the manger with ox, donkey and lambs under Bethlehem’s blue sky.']},
- {id:'reyes-magos',cat:'pesebre',mat:'gob',img:['reyes-magos','reyes-magos-2','reyes-magos-3'],es:['Adoración de los Reyes Magos','Los tres Reyes adorando al Niño Dios, tejido con destellos dorados.'],en:['Adoration of the Magi','The three Kings worshipping the Child, woven with golden sparkles.']},
- {id:'sf-azul',cat:'pesebre',mat:'gob',img:['sagrada-familia-azul'],es:['Sagrada Familia con ángel (noche)','José, María, el Niño y un ángel, con fondo de cielo nocturno.'],en:['Holy Family with angel (night)','Joseph, Mary, the Child and an angel against a night sky.']},
- {id:'sf-dorado',cat:'pesebre',mat:'gob',img:['sagrada-familia-dorado'],es:['Sagrada Familia con ángel (dorado)','La misma escena en tonos dorados y crema, muy elegante.'],en:['Holy Family with angel (gold)','The same scene in elegant gold and cream tones.']},
- {id:'camino-belen',cat:'pesebre',mat:'est',img:['camino-belen'],es:['Camino de la Sagrada Familia','José guiando el burrito con María y el Niño al atardecer.'],en:['The Holy Family’s journey','Joseph leading the donkey with Mary and the Child at sunset.']},
- {id:'muneco-bosque',cat:'nieve',mat:'gob',img:['muneco-bosque'],es:['Muñeco de nieve en el bosque','Con escoba, sombrero de copa, cardenales, venadito y conejitos.'],en:['Snowman in the woods','With broom, top hat, cardinals, a fawn and bunnies.']},
- {id:'munecos-pajaritos',cat:'nieve',mat:'gob',img:['munecos-pajaritos'],es:['Pareja de muñecos de nieve','Dos muñecos con canasta, gorros tejidos y pajaritos de colores.'],en:['Snowman couple','Two snow friends with a basket, knit hats and colorful birds.']},
- {id:'muneco-reno',cat:'nieve',mat:'gob',img:['muneco-reno'],es:['Muñeco de nieve y reno','Un tierno encuentro entre el muñeco de nieve y el reno frente a la cabaña.'],en:['Snowman and reindeer','A sweet moment between a snowman and a reindeer by the cabin.']},
- {id:'gnomo',cat:'nieve',mat:'gob',img:['gnomo-sombrilla'],es:['Gnomo con sombrilla','Gnomo navideño bajo una sombrilla floral mientras cae la nieve.'],en:['Gnome with umbrella','A Christmas gnome under a floral umbrella in the falling snow.']},
- {id:'reno-luces',cat:'nieve',mat:'gob',img:['reno-luces'],es:['Reno sonriente','Reno de nariz roja con luces en los cachos y bufanda de estrellas.'],en:['Smiling reindeer','Red-nosed reindeer with lights on its antlers and a starry scarf.']},
- {id:'pueblo-navideno',cat:'arbol',mat:'gob',img:['pueblo-navideno'],es:['Pueblo en Navidad','La plaza nevada con el gran árbol, la iglesia, el coche de caballos y niños haciendo un muñeco de nieve.'],en:['Christmas village','A snowy town square with a big tree, the church, a horse carriage and children building a snowman.']},
- {id:'arbol-estrellas',cat:'arbol',mat:'est',img:['arbol-estrellas'],es:['Árbol bajo las estrellas','Árbol iluminado con regalos rojos y montañas nevadas.'],en:['Tree under the stars','Glowing tree with red gifts and snowy mountains.']},
- {id:'arbol-sala',cat:'arbol',mat:'est',img:['arbol-sala'],es:['Árbol en la sala','Gran árbol decorado entre ventanales y sillones rojos.'],en:['Tree in the living room','A grand decorated tree between tall windows and red armchairs.']},
- {id:'gatito-arbol',cat:'arbol',mat:'gob',img:['gatito-arbol'],es:['Gatito y árbol de Navidad','Un gatito curioso sobre los regalos junto al arbolito.'],en:['Kitten and Christmas tree','A curious kitten on the gifts beside the tree.']},
- {id:'medias-chimenea',cat:'arbol',mat:'est',img:['medias-chimenea'],es:['Medias junto a la chimenea','Las medias navideñas colgadas frente al fuego y el árbol.'],en:['Stockings by the fireplace','Christmas stockings hung by the fire and the tree.']}
-];
+let P=[];
+const nm=p=>(p[L]&&p[L][0])||p.es[0], ds=p=>(p[L]&&p[L][1])||p.es[1]||'';
+const cop=n=>'$ '+Number(n).toLocaleString('es-CO');
 const T={
  es:{tag:'Temporada navideña 2026',h1:'Cojines que <span>visten tu Navidad</span>',sub:'Papá Noel, pesebres, muñecos de nieve y árboles. 19 diseños para llenar de magia la sala, la cama o el regalo perfecto.',ver:'Ver los cojines',hablar:'Escríbele a Melissa',cinta:'COJINES NAVIDEÑOS HECHOS A MANO · TELA MICROFIBRA Y TELA AMERICANA · DETALLES CON POLVOS AMERICANOS · PIDE POR WHATSAPP 321 875 3355 · IDEALES PARA REGALAR · COJINES NAVIDEÑOS HECHOS A MANO · PIDE POR WHATSAPP 321 875 3355',catTit:'Escoge tus favoritos',catSub:'Toca la foto para verla grande. Agrega los que quieras y le llega todo el pedido a Melissa por WhatsApp.',vtag:'Mira los detalles de cerca',hTag:'Hechos a mano',hTit:'Cosidos por Melissa en la máquina de la abuela',hP:'Cada cojín lo hace Melissa con sus propias manos, en la máquina de coser que heredó de su abuela. Por eso cada uno lleva cariño de familia.',d1t:'Tela microfibra y tela americana',d1p:'Suaves al tacto y lindas a la vista, para la sala, la cama o el regalo.',d2t:'Detalles con polvos americanos',d2p:'Algunos diseños llevan un brillo especial que resalta con las luces de Navidad.',chip:'Hecho a mano',musOn:'Música',musOff:'Sin música',cTit:'Pídeselos a Melissa',cSub:'Pregúntale precios, medidas y entregas directamente por WhatsApp.',cBtn:'Abrir WhatsApp',pie:'Los Cojines de Melissa · Pedidos por WhatsApp +57 321 875 3355',hecho:'App hecha por',carro:'cojines en tu pedido',carroBtn:'Ver pedido',cerrar:'Cerrar',pedTit:'Tu pedido',nom:'Tu nombre',dir:'Barrio / ciudad de entrega',nota:'Nota (opcional)',enviar:'Enviar pedido por WhatsApp',
-  cats:{todos:'Todos',santa:'Papá Noel',pesebre:'Pesebres',nieve:'Nieve y renos',arbol:'Árboles, hogar y pueblo'},add:'Agregar',ok:'Agregado',fotos:'fotos',
+  cats:{todos:'Todos',santa:'Papá Noel',pesebre:'Pesebres',nieve:'Nieve y renos',arbol:'Árboles, hogar y pueblo'},add:'Agregar',ok:'Agregado',fotos:'fotos',est:{disponible:'Disponible',pocos:'Últimas unidades',agotado:'Agotado'},agot:'Agotado',consult:'Consulta el precio',total:'Total aproximado',waPre2:'¿Me confirmas disponibilidad y entrega? Gracias.',
   waHola:'Hola Melissa, vi tus cojines navideños en la app y quiero información.',waPed:'Hola Melissa, quiero pedir estos cojines navideños:',waNom:'Nombre',waDir:'Entrega',waNota:'Nota',waPre:'¿Me confirmas precio y disponibilidad? Gracias.',vacio:'Aún no has agregado cojines.',quitar:'Quitar'},
  en:{tag:'Christmas season 2026',h1:'Cushions that <span>dress up your Christmas</span>',sub:'Santa, nativity scenes, snowmen and trees. 19 designs to fill your living room, bed or perfect gift with magic.',ver:'See the cushions',hablar:'Message Melissa',cinta:'HANDMADE CHRISTMAS CUSHIONS · MICROFIBER AND AMERICAN FABRIC · GLITTER POWDER DETAILS · ORDER ON WHATSAPP +57 321 875 3355 · PERFECT GIFTS · HANDMADE CHRISTMAS CUSHIONS · ORDER ON WHATSAPP +57 321 875 3355',catTit:'Pick your favorites',catSub:'Tap a photo to enlarge it. Add as many as you like and your whole order goes to Melissa on WhatsApp.',vtag:'See the details up close',hTag:'Handmade',hTit:'Sewn by Melissa on her grandmother’s machine',hP:'Melissa makes every cushion with her own hands, on the sewing machine she inherited from her grandmother. Each one carries a bit of family love.',d1t:'Microfiber and American fabric',d1p:'Soft to the touch and lovely to look at, for the living room, the bed or a gift.',d2t:'Glitter powder details',d2p:'Some designs carry a special sparkle that shines under the Christmas lights.',chip:'Handmade',musOn:'Music',musOff:'Muted',cTit:'Order from Melissa',cSub:'Ask about prices, sizes and delivery directly on WhatsApp.',cBtn:'Open WhatsApp',pie:'Los Cojines de Melissa · Orders on WhatsApp +57 321 875 3355',hecho:'App made by',carro:'cushions in your order',carroBtn:'View order',cerrar:'Close',pedTit:'Your order',nom:'Your name',dir:'Delivery neighborhood / city',nota:'Note (optional)',enviar:'Send order on WhatsApp',
-  cats:{todos:'All',santa:'Santa',pesebre:'Nativity',nieve:'Snow & reindeer',arbol:'Trees, home & village'},add:'Add',ok:'Added',fotos:'photos',
+  cats:{todos:'All',santa:'Santa',pesebre:'Nativity',nieve:'Snow & reindeer',arbol:'Trees, home & village'},add:'Add',ok:'Added',fotos:'photos',est:{disponible:'Available',pocos:'Last units',agotado:'Sold out'},agot:'Sold out',consult:'Ask for the price',total:'Approximate total',waPre2:'Could you confirm availability and delivery? Thank you.',
   waHola:'Hi Melissa, I saw your Christmas cushions in the app and would like more information.',waPed:'Hi Melissa, I would like to order these Christmas cushions:',waNom:'Name',waDir:'Delivery',waNota:'Note',waPre:'Could you confirm price and availability? Thank you.',vacio:'You haven’t added any cushions yet.',quitar:'Remove'}
 };
 let L=localStorage.getItem('lang')||'es',F='todos',C={};
@@ -262,11 +248,14 @@ const $=s=>document.querySelector(s);
 const wa=t=>'https://wa.me/'+TEL+'?text='+encodeURIComponent(t);
 
 // hero
-const HS=['santa-trineo-luna','pesebre-granero','arbol-sala','muneco-reno','reyes-magos','medias-chimenea','gnomo-sombrilla','camino-belen'];
-const hero=$('#hero'),dots=$('#dots');
-HS.forEach((s,i)=>{const d=document.createElement('div');d.className='slide'+(i?'':' on');d.style.backgroundImage=`url(img/${s}.jpg)`;hero.prepend(d);dots.insertAdjacentHTML('beforeend',`<i class="${i?'':'on'}"></i>`)});
-let hi=0;const sl=[...hero.querySelectorAll('.slide')].reverse(),dt=[...dots.children];
-setInterval(()=>{sl[hi].classList.remove('on');dt[hi].classList.remove('on');hi=(hi+1)%sl.length;sl[hi].classList.add('on');dt[hi].classList.add('on')},4200);
+const hero=$('#hero'),dots=$('#dots');let hi=0,sl=[],dt=[];
+function heroArmar(){
+ const fotos=P.filter(p=>p.estado!=='agotado').map(p=>p.img[0]).filter(Boolean).slice(0,8);
+ hero.querySelectorAll('.slide').forEach(x=>x.remove());dots.innerHTML='';
+ fotos.forEach((u,i)=>{const d=document.createElement('div');d.className='slide'+(i?'':' on');d.style.backgroundImage=`url("${u}")`;hero.prepend(d);dots.insertAdjacentHTML('beforeend',`<i class="${i?'':'on'}"></i>`)});
+ hi=0;sl=[...hero.querySelectorAll('.slide')].reverse();dt=[...dots.children];
+}
+setInterval(()=>{if(sl.length<2)return;sl[hi].classList.remove('on');dt[hi].classList.remove('on');hi=(hi+1)%sl.length;sl[hi].classList.add('on');dt[hi].classList.add('on')},4200);
 for(let i=0;i<40;i++){const s=document.createElement('s');s.style.left=Math.random()*100+'%';s.style.animationDuration=6+Math.random()*8+'s';s.style.animationDelay=-Math.random()*12+'s';const z=2+Math.random()*5;s.style.width=s.style.height=z+'px';$('#nieve').appendChild(s)}
 
 function textos(){
@@ -283,16 +272,17 @@ const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.tar
 function grid(){
  const g=$('#grid');g.innerHTML='';
  P.filter(p=>F==='todos'||p.cat===F).forEach((p,i)=>{
-  const q=C[p.id]||0;
-  const c=document.createElement('article');c.className='card';c.style.transitionDelay=(i%4)*70+'ms';
-  c.innerHTML=`<div class="foto"><img src="img/${p.img[0]}.jpg" alt="${p[L][0]}" loading="lazy"><span class="chip">${T[L].chip}</span>${p.img.length>1?`<span class="mas">${p.img.length} ${T[L].fotos}</span>`:''}</div>
-  <div class="info"><h3>${p[L][0]}</h3><p>${p[L][1]}</p>
-  <div class="fila"><div class="cant"><button data-a="-">−</button><span>${q||1}</span><button data-a="+">+</button></div>
-  <button class="add ${q?'ok':''}">${q?T[L].ok+' ('+q+')':T[L].add}</button></div></div>`;
+  const q=C[p.id]||0, ag=p.estado==='agotado';
+  const c=document.createElement('article');c.className='card'+(ag?' agot':'');c.style.transitionDelay=(i%4)*70+'ms';
+  c.innerHTML=`<div class="foto"><img src="${p.img[0]||''}" alt="" loading="lazy"><span class="chip est-${p.estado}">${T[L].est[p.estado]}</span>${p.img.length>1?`<span class="mas">${p.img.length} ${T[L].fotos}</span>`:''}</div>
+  <div class="info"><h3></h3><p class="ds"></p><div class="precio">${p.precio?cop(p.precio):`<small>${T[L].consult}</small>`}</div>
+  <div class="fila"><div class="cant"><button data-a="-" ${ag?'disabled':''}>−</button><span>${q||1}</span><button data-a="+" ${ag?'disabled':''}>+</button></div>
+  <button class="add ${q?'ok':''}" ${ag?'disabled':''}>${ag?T[L].agot:q?T[L].ok+' ('+q+')':T[L].add}</button></div></div>`;
+  c.querySelector('h3').textContent=nm(p);c.querySelector('.ds').textContent=ds(p);c.querySelector('img').alt=nm(p);
   let n=q||1;const sp=c.querySelector('.cant span');
   c.querySelector('[data-a="-"]').onclick=()=>{n=Math.max(1,n-1);sp.textContent=n};
   c.querySelector('[data-a="+"]').onclick=()=>{n++;sp.textContent=n};
-  c.querySelector('.add').onclick=e=>{C[p.id]=n;guardar();e.target.className='add ok';e.target.textContent=T[L].ok+' ('+n+')'};
+  if(!ag)c.querySelector('.add').onclick=e=>{C[p.id]=n;guardar();e.target.className='add ok';e.target.textContent=T[L].ok+' ('+n+')'};
   c.querySelector('.foto').onclick=()=>abrirVisor(p);
   g.appendChild(c);obs.observe(c);
  });
@@ -304,22 +294,25 @@ function lista(){
  if(!ks.length){l.innerHTML=`<p>${T[L].vacio}</p>`;return}
  l.innerHTML='';ks.forEach(k=>{const p=P.find(x=>x.id===k);if(!p)return;
   const d=document.createElement('div');d.className='item';
-  d.innerHTML=`<img src="img/${p.img[0]}.jpg" alt=""><div>${C[k]} × ${p[L][0]}</div><button>${T[L].quitar}</button>`;
+  d.innerHTML=`<img src="${p.img[0]||''}" alt=""><div></div><button>${T[L].quitar}</button>`;d.querySelector('div').textContent=`${C[k]} × ${nm(p)}`+(p.precio?' · '+cop(p.precio*C[k]):'');
   d.querySelector('button').onclick=()=>{delete C[k];guardar();lista();grid()};l.appendChild(d)});
+ const tot=ks.map(k=>P.find(x=>x.id===k)).filter(Boolean);
+ if(tot.length&&tot.every(p=>p.precio))l.insertAdjacentHTML('beforeend',`<p class="tot">${T[L].total}: <b>${cop(tot.reduce((a,p)=>a+p.precio*C[p.id],0))}</b></p>`);
 }
 $('#carro').onclick=()=>{lista();$('#modal').classList.add('on')};
 $('#cerrarModal').onclick=()=>$('#modal').classList.remove('on');
 $('#modal').onclick=e=>{if(e.target.id==='modal')$('#modal').classList.remove('on')};
 $('#enviar').onclick=()=>{
  const ks=Object.keys(C);if(!ks.length)return;
- let t=T[L].waPed+'\n\n';ks.forEach(k=>{const p=P.find(x=>x.id===k);if(p)t+=`• ${C[k]} × ${p[L][0]}\n`});
+ let t=T[L].waPed+'\n\n';let todos=true,tt=0;ks.forEach(k=>{const p=P.find(x=>x.id===k);if(!p)return;t+=`• ${C[k]} × ${nm(p)}`+(p.precio?` (${cop(p.precio)} c/u)`:'')+'\n';if(p.precio)tt+=p.precio*C[k];else todos=false});
+ if(todos&&tt)t+='\n'+T[L].total+': '+cop(tt)+'\n';
  const nm=$('#nombre').value.trim(),dr=$('#dirEnt').value.trim(),nt=$('#nota').value.trim();
  t+='\n';if(nm)t+=T[L].waNom+': '+nm+'\n';if(dr)t+=T[L].waDir+': '+dr+'\n';if(nt)t+=T[L].waNota+': '+nt+'\n';
- t+='\n'+T[L].waPre;window.open(wa(t),'_blank');
+ t+='\n'+(todos?T[L].waPre2:T[L].waPre);window.open(wa(t),'_blank');
 };
 let VP=null,VI=0;
 function abrirVisor(p){VP=p;VI=0;mostrar();$('#visor').classList.add('on')}
-function mostrar(){$('#visorImg').src=`img/${VP.img[VI]}.jpg`;$('#prev').style.display=$('#next').style.display=VP.img.length>1?'':'none'}
+function mostrar(){$('#visorImg').src=VP.img[VI];$('#prev').style.display=$('#next').style.display=VP.img.length>1?'':'none'}
 $('#prev').onclick=()=>{VI=(VI-1+VP.img.length)%VP.img.length;mostrar()};
 $('#next').onclick=()=>{VI=(VI+1)%VP.img.length;mostrar()};
 $('#cerrarVisor').onclick=()=>$('#visor').classList.remove('on');
@@ -333,7 +326,15 @@ function musPlay(){mus.play().then(musUI).catch(()=>{})}
 $('#musBtn').onclick=()=>{if(mus.paused){musPref=true;musPlay()}else{musPref=false;mus.pause();musUI()}try{localStorage.setItem('musica',musPref?'si':'no')}catch(e){}};
 document.addEventListener('visibilitychange',()=>{if(document.hidden)mus.pause();else if(musPref&&mus.currentTime>0)musPlay();musUI()});
 mus.addEventListener('pause',musUI);mus.addEventListener('play',musUI);
-textos();filtros();grid();carro();musUI();
+async function cargar(){
+ let lista=null;
+ try{const r=await fetch('/api/catalogo',{cache:'no-store'});if(r.ok){const d=await r.json();lista=d.productos}}catch(e){}
+ if(!lista){try{const r=await fetch('productos.json',{cache:'no-store'});lista=(await r.json()).productos}catch(e){lista=[]}}
+ P=lista.filter(p=>p.visible!==false);
+ Object.keys(C).forEach(k=>{const p=P.find(x=>x.id===k);if(!p||p.estado==='agotado')delete C[k]});
+ heroArmar();grid();carro();
+}
+textos();filtros();carro();musUI();cargar();
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
 </body>

@@ -306,9 +306,9 @@ $('#enviar').onclick=()=>{
  const ks=Object.keys(C);if(!ks.length)return;
  let t=T[L].waPed+'\n\n';let todos=true,tt=0;ks.forEach(k=>{const p=P.find(x=>x.id===k);if(!p)return;t+=`• ${C[k]} × ${nm(p)}`+(p.precio?` (${cop(p.precio)} c/u)`:'')+'\n';if(p.precio)tt+=p.precio*C[k];else todos=false});
  if(todos&&tt)t+='\n'+T[L].total+': '+cop(tt)+'\n';
- const nm=$('#nombre').value.trim(),dr=$('#dirEnt').value.trim(),nt=$('#nota').value.trim();
- t+='\n';if(nm)t+=T[L].waNom+': '+nm+'\n';if(dr)t+=T[L].waDir+': '+dr+'\n';if(nt)t+=T[L].waNota+': '+nt+'\n';
- t+='\n'+(todos?T[L].waPre2:T[L].waPre);window.open(wa(t),'_blank');
+ const nomC=$('#nombre').value.trim(),dr=$('#dirEnt').value.trim(),nt=$('#nota').value.trim();
+ t+='\n';if(nomC)t+=T[L].waNom+': '+nomC+'\n';if(dr)t+=T[L].waDir+': '+dr+'\n';if(nt)t+=T[L].waNota+': '+nt+'\n';
+ t+='\n'+(todos?T[L].waPre2:T[L].waPre);const url=wa(t),w=window.open(url,'_blank');if(!w)location.href=url;
 };
 let VP=null,VI=0;
 function abrirVisor(p){VP=p;VI=0;mostrar();$('#visor').classList.add('on')}
